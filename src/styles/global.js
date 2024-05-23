@@ -13,11 +13,11 @@ export default createGlobalStyle`
 
  body {
   background-color: ${({theme}) => theme.COLORS.BACKGROUND_800};
-  color: ${({theme}) => theme.Colors.WHITE};
+  color: ${({theme}) => theme.COLORS.WHITE};
   -webkit-font-smoothing : antialised
  }
  body, button, textarea,input {
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-size: 16px;
   outline: none;
 

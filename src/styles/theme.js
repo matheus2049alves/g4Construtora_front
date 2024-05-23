@@ -8,6 +8,7 @@ export default {
   BACKGROUND_700: "#3E3847",
 
   WHITE: "#F4EDE8",
+  WHITE_SMOKE : "#E0E0E0",
 
   ORANGE: "#FF9000",
 
