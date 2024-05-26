@@ -1,24 +1,24 @@
 import { RiShutDownLine } from "react-icons/ri";
-import { Container, Profile, Logout } from "./styles";
+import { Container, Logout } from "./styles";
 
 export function Header () {
   return (
     <Container>
-      <Profile >
+        <h2>G4</h2>
 
-        <img 
-          src="http://github.com/diogobrasil.png" 
-          alt="Foto do Usuário" 
-        />
-
-        <div>
-
-          <span>Bem-Vindo</span>
-          <strong>Nome do Usuário</strong>
-
-        </div>
-        
-      </Profile>
+        <nav>
+          <ul>
+            <li> <a href="#">Imóveis</a></li>
+            <li>
+             <a href="#">Area do Cliente</a>
+             <ul className="DropDown">
+              <li><a href="#">Compras</a></li>
+              <li> <a href="#"> Meus Dados</a></li>
+             </ul>
+            </li>
+          </ul>
+        </nav>
+    
 
       <Logout>
         <RiShutDownLine/>
