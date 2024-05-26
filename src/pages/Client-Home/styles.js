@@ -17,6 +17,23 @@ export const Filter = styled.div`
   background: url(${background}) no-repeat center center;
   background-size: cover;
 
+`
 
+export const Slider = styled.div`
+  grid-area: content;
+  width: 105.2rem;
+  margin:0 auto ;
+  padding: 5rem 0;
+
+  > div {
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
 
 `
+
+
+
+
+
+
