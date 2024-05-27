@@ -21,17 +21,18 @@ export const Form = styled.form`
 
   > h1 {
     font-size: 4.8rem;
-    color: ${({ theme }) => theme.COLORS.ORANGE};
+    color: ${({ theme }) => theme.COLORS.TITLE_100};
   }
 
   > h2 {
     font-size: 2.4rem;
     margin: 4.8rem 0;
+    color: ${({ theme }) => theme.COLORS.TITLE_200}
   }
 
   > p {
     font-size: 1.4rem;
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
+    color: ${({ theme }) => theme.COLORS.TITLE_200}
   }
 
   > a {

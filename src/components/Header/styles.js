@@ -9,7 +9,7 @@ export const Container = styled.header`
 
   border-bottom-width: 0.1rem;
   border-bottom-style: solid;
-  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  background-color: ${({ theme }) => theme.COLORS.WHITE};
  
 
   display: flex;
@@ -20,7 +20,7 @@ export const Container = styled.header`
 
   > h2 {
     font-size: 5rem;
-    color: ${({ theme }) => theme.COLORS.ORANGE};
+    color: ${({ theme }) => theme.COLORS.TITLE_100};
   }
 nav {
   > ul {
@@ -38,7 +38,7 @@ nav {
       .DropDown { /* Sem o ul que envolvia o .Dropdown */
         position: absolute;
         width: 20rem;
-        background-color: ${({ theme }) => theme.COLORS.GRAY_100};
+        background-color: ${({ theme }) => theme.COLORS.WHITE};
         border-radius: 1rem;
         padding: 1rem;
         display: none; /* Oculta o dropdown por padrão */
@@ -59,7 +59,7 @@ nav {
         text-decoration: none;
         text-align: center;
         padding: 0 2rem;
-        color:  ${({ theme }) => theme.COLORS.WHITE};
+        color:  ${({ theme }) => theme.COLORS.TEXT_100 };
       }
     }
   }

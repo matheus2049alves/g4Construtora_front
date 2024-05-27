@@ -28,6 +28,7 @@ export const Slider = styled.div`
   > div {
     text-align: center;
     margin-bottom: 1.2rem;
+    color: ${({ theme }) => theme.COLORS.TITLE_100};
   }
 
 `

@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 30rem;
+  width: 35rem;
   height: 50rem;
   display: grid;
   grid-template-rows: 26.8rem auto;
   border-radius: .5rem;
   grid-template-areas: "image" "content";
-  background-color: ${({theme}) => theme.COLORS.GRAY_100};
-  box-shadow: 0px 2px 4px ${({ theme }) => theme.COLORS.WHITE}
-`
+  background-color: ${({theme}) => theme.COLORS.WHITE};
+  box-shadow: 0px 2px 4px ${({ theme }) => theme.COLORS.BACKGROUND_100}
+
+  `
 
 export const Image = styled.img`
   grid-area: image;
@@ -29,16 +30,16 @@ export const AboutProperty = styled.div`
   > h1 {
     font-size: 2.6rem;
     margin-bottom: 1rem;
-    font-weight: 400;   // Um pouco mais de peso para dar ênfase
-    color: ${({ theme }) => theme.COLORS.WHITE}; 
-    margin-bottom: 0.5rem; // Espaçamento sutil abaixo do título
+    font-weight: 400;   
+    color: ${({ theme }) => theme.COLORS.TITLE_100}; 
+    margin-bottom: 0.5rem; 
   }
 
   > p {
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.5;
-    color: ${({ theme }) => theme.COLORS.ORANGE};
+    color: ${({ theme }) => theme.COLORS.TEXT};
     margin-bottom: 1rem;
   }
 

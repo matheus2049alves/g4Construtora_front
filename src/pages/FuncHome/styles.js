@@ -29,7 +29,7 @@ export const Brand = styled.div`
   border-bottom-style: solid;
   border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
 
   > h1 {
     font-size: 2.4rem;
@@ -39,7 +39,7 @@ export const Brand = styled.div`
 
 export const Menu = styled.ul`
   grid-area: menu;
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
 
   padding-top: 6.4rem;
   text-align: center;
@@ -64,8 +64,10 @@ export const Content = styled.div`
 export const Create = styled.button`
   grid-area: create;
 
-  background-color: ${({ theme }) => theme.COLORS.ORANGE};
-  color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200 };
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_TEXT};
+  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
+  border-radius:0 0.5rem 0 0;
 
   display: flex;
   align-items: center;
@@ -79,8 +81,10 @@ export const Create = styled.button`
 export const Sale = styled.button`
   grid-area: sale;
 
-  background-color: ${({ theme }) => theme.COLORS.ORANGE};
-  color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_TEXT};
+  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
+  border-radius:0 0 0.5rem 0;
 
   display: flex;
   align-items: center;
