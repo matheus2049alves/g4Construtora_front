@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 10.5rem 34.5rem auto 20rem;
+  grid-template-rows: 10.5rem 34.5rem auto 10rem;
   grid-template-areas:  
   "header" "filter" "content" "footer" ;
 `
@@ -31,6 +31,18 @@ export const Slider = styled.div`
     color: ${({ theme }) => theme.COLORS.TITLE_100};
   }
 
+`
+
+export const Footer = styled.footer`
+  grid-area: footer;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
+  padding: 2rem;
+
+  .footer-content {
+    h3  {
+      color: ${({ theme }) => theme.COLORS.TITLE_100}
+    }
+  }
 `
 
 

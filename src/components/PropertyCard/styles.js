@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   width: 35rem;
   height: 50rem;
   display: grid;
@@ -44,10 +45,10 @@ export const AboutProperty = styled.div`
   }
 
   > span {
-    font-size: 2rem; // Aumentei um pouco para destacar o preço
-    font-weight: 700;   // Mais peso para o preço
-    margin-top: 0.5rem; // Espaçamento sutil acima do preço
-    display: block;     // Garante que o preço ocupe a linha inteira
+    font-size: 2rem; 
+    font-weight: 700;   
+    margin-top: 0.5rem; 
+    display: block;     
   }
 
 

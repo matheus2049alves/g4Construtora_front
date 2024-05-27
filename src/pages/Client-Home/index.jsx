@@ -1,8 +1,11 @@
-import { Container, Filter, Slider} from "./styles";
+import { Container, Filter, Slider,Footer} from "./styles";
 import { PropertyCard } from "../../components/PropertyCard";
 import {Header} from "../../components/Header";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import {Pagination,Autoplay} from "swiper/modules"
 import 'swiper/css';
+import 'swiper/css/pagination';
+
 
 export function ClientHome() {
   return (
@@ -12,13 +15,18 @@ export function ClientHome() {
       <Slider>
         <div>  <h2>Destaques para você</h2></div>
       <Swiper
+           modules={[Pagination,Autoplay]}
           spaceBetween={50}
-            slidesPerView={3}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
+          slidesPerView={3}
+          pagination={{clickable: true}}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           >
             <SwiperSlide>
-              <PropertyCard
+
+              <PropertyCard to={"/profile"}
                 title={"Residencial Jardim Botânico"}
                 img={"https://plus.unsplash.com/premium_photo-1687960117069-567a456fe5f3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                 description={"2 quartos, piscina e vista para o mar"}
@@ -84,7 +92,13 @@ export function ClientHome() {
             </SwiperSlide>
         </Swiper>
       </Slider>
-  
+      <Footer>
+        <div className="footer-content">
+          <h3>Entre em contato</h3>
+          <p>E-mail: g4Construtora@gmail.com</p>
+          <p>Telefone: (98) 99996666</p>
+        </div>
+      </Footer>
     </Container>
   )
 }

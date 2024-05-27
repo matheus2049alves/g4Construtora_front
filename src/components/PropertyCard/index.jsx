@@ -1,8 +1,8 @@
 import {Container, Image, AboutProperty} from "./styles"
 
-export function PropertyCard({img,price,title,description}){
+export function PropertyCard({to,img,price,title,description}){
   return(
-    <Container>
+    <Container to = {to}>
      <Image src={img} alt={title} />
      <AboutProperty>
         <h1>{title}</h1>
