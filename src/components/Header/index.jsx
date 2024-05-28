@@ -13,7 +13,7 @@ export function Header () {
              <a href="#">Area do Cliente</a>
              <ul className="DropDown">
               <li><a href="#">Compras</a></li>
-              <li> <a href="#"> Meus Dados</a></li>
+              <li> <a href="/profile"> Meus Dados</a></li>
              </ul>
             </li>
           </ul>

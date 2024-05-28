@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -6,16 +7,48 @@ export const Container = styled.div`
 
   display: grid;
   grid-template-columns: 25rem auto;
-  grid-template-rows: 10.5rem 12.8rem auto 6.4rem 6.4rem;
+  grid-template-rows: 6.5rem 12.8rem 12.8rem auto 6.4rem 6.4rem;
   grid-template-areas:
   "brand header"
   "menu search"
+  "menu label"
   "menu content"
   "sale content"
   "create content"
   ;
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUN_800};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_100};
+`;
+
+export const Header = styled.header`
+
+  grid-area: header;
+
+  height: 6.5rem;
+  width: 100%;
+
+  border-bottom-width: 0.1rem;
+  border-bottom-style: solid;
+  border-color: ${({ theme }) => theme.COLORS.GRAY_100};
+  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
+ 
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+  padding: 0 8rem;
+
+`;
+ 
+export const Logout = styled.button`
+  border: none;
+  background: none;
+
+  > svg {
+    color: ${({ theme }) => theme.COLORS.TITLE_100};
+    font-size: 3.6rem;
+  }
 `;
 
 export const Brand = styled.div`
@@ -27,13 +60,13 @@ export const Brand = styled.div`
 
   border-bottom-width: 0.1rem;
   border-bottom-style: solid;
-  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  border-color: ${({ theme }) => theme.COLORS.GRAY_300};
 
-  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
+  background-color: ${({ theme }) => theme.COLORS.GRAY_300};
 
-  > h1 {
-    font-size: 2.4rem;
-    color: ${({ theme }) => theme.COLORS.ORANGE};
+  > h2 {
+    font-size: 5rem;
+    color: ${({ theme }) => theme.COLORS.TITLE_100};
   }
 `;
 
@@ -53,6 +86,26 @@ export const Menu = styled.ul`
 export const Search = styled.div`
   grid-area: search;
   padding: 6.4rem 6.4rem 0;
+`;
+
+export const Label = styled.section`
+  grid-area: label;
+
+  margin: 2.8rem 0;
+  padding: 0 6.4rem;
+
+  h2 {
+    border-bottom-width: 0.1rem;
+    border-bottom-style: solid;
+    border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+
+    padding-bottom: 1.6rem;
+    margin-bottom: 2.8rem;
+
+    color: ${({ theme }) => theme.COLORS.TEXT};
+    font-size: 2.0rem;
+    font-weight:  400;
+  }
 `;
 
 export const Content = styled.div`
@@ -78,11 +131,11 @@ export const Create = styled.button`
   }
 `;
 
-export const Sale = styled.button`
+export const Sale = styled(Link)`
   grid-area: sale;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
-  color: ${({ theme }) => theme.COLORS.BACKGROUND_TEXT};
+  color: ${({ theme }) => theme.COLORS.TITLE_100};
   border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
   border-radius:0 0 0.5rem 0;
 

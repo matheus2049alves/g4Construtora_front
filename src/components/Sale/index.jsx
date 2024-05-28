@@ -2,7 +2,7 @@ import { Container } from './styles';
 
 import { Status } from '../../components/Status';
 
-export function Imovel ({ data, ...rest}) {
+export function Sale ({ data, ...rest}) {
   return (
     <Container {...rest}>
       <div className='titulo'>
@@ -12,15 +12,10 @@ export function Imovel ({ data, ...rest}) {
 
       </div>
       
-      <div className='endereco'>
-        <p> {data.endereco.cidade} , {data.endereco.cep}</p>
-        <p> {data.endereco.rua} , {data.endereco.bairro}</p>
-      </div>
-
       { 
         data.status &&
           <footer>
-            <Status title={data.status} sold={String(data.status).toLocaleLowerCase() === "vendido" ? true : false }/>
+            <Status title={data.status} sold={String(data.status).toLocaleLowerCase() === "concluido" ? true : false }/>
           </footer>
       }
 

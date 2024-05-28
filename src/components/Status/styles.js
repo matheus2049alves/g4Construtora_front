@@ -6,14 +6,14 @@ export const Container = styled.span`
   margin-right: 0.6rem;
   color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   
-  .vendido {
+  .status-red {
     width: 100%;
     padding: 0.5rem 1.4rem;
-    background-color: ${({ theme }) => theme.COLORS.ORANGE };
+    background-color: ${({ theme }) => theme.COLORS.RED };
     border-radius: 0.5rem;
   }
    
-  .disponivel {
+  .status-green {
     width: 100%;
     padding: 0.5rem 1.4rem;
     background-color: green;
