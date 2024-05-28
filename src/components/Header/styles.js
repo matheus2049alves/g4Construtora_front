@@ -13,16 +13,20 @@ export const Container = styled.header`
  
 
   display: flex;
-  justify-content: space-between;
+  position: relative;
   align-items: center;
 
   padding: 0 8rem;
 
   > h2 {
+    position: absolute;
+    left: 3rem;
     font-size: 5rem;
     color: ${({ theme }) => theme.COLORS.TITLE_100};
   }
 nav {
+  position: absolute;
+  right: 25rem;
   > ul {
     list-style: none;
     font-size: 2rem;
@@ -79,6 +83,8 @@ nav {
 
  
 export const Logout = styled.button`
+  position: absolute;
+  right: 2rem;
   border: none;
   background: none;
 
