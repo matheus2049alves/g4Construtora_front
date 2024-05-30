@@ -2,7 +2,7 @@ import { Container } from './styles';
 
 import { Status } from '../../components/Status';
 
-export function Imovel ({ data, ...rest}) {
+export function Property ({ data, ...rest}) {
   return (
     <Container {...rest}>
       <div className='titulo'>
@@ -20,7 +20,7 @@ export function Imovel ({ data, ...rest}) {
       { 
         data.status &&
           <footer>
-            <Status title={data.status} sold={String(data.status).toLocaleLowerCase() === "vendido" ? true : false }/>
+            <Status title={data.status} sold={String(data.status).toLocaleLowerCase() === "disponível" ? true : false }/>
           </footer>
       }
 

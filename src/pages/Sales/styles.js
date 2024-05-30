@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -5,17 +6,17 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 6.5rem 12.8rem 12.8rem auto;
+  grid-template-columns: 25rem auto;
+  grid-template-rows: 6.5rem 12.8rem 12.8rem auto 6.4rem;
   grid-template-areas:
-  "header"
-  "search"
-  "label"
-  "content"
+  "brand header"
+  "menu search"
+  "menu label"
+  "menu content"
+  "create content"
   ;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_100};
-
 `;
 
 export const Header = styled.header`
@@ -32,19 +33,51 @@ export const Header = styled.header`
  
 
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
 
   padding: 0 8rem;
 
-  svg {
-    color: ${({ theme }) => theme.COLORS.TITLE_100};
-    font-size: 2.4rem;
-  }
+`;
+ 
+export const Logout = styled.button`
+  border: none;
+  background: none;
 
-  h2 {
+  > svg {
+    color: ${({ theme }) => theme.COLORS.TITLE_100};
+    font-size: 3.6rem;
+  }
+`;
+
+export const Brand = styled.div`
+  grid-area: brand;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom-width: 0.1rem;
+  border-bottom-style: solid;
+  border-color: ${({ theme }) => theme.COLORS.GRAY_300};
+
+  background-color: ${({ theme }) => theme.COLORS.GRAY_300};
+
+  > h2 {
     font-size: 5rem;
     color: ${({ theme }) => theme.COLORS.TITLE_100};
+  }
+`;
+
+export const Menu = styled.ul`
+  grid-area: menu;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
+
+  padding-top: 16rem;
+  text-align: center;
+
+  > li {
+    margin-bottom: 2.4rem;
   }
 
 `;
@@ -78,4 +111,21 @@ export const Content = styled.div`
   grid-area: content;
   padding: 0 6.4rem;
   overflow-y: auto;
+`;
+
+export const Create = styled.button`
+  grid-area: create;
+
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200 };
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_TEXT};
+  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
+  border-radius:0 0.5rem 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    margin-right: 0.8rem;
+  }
 `;

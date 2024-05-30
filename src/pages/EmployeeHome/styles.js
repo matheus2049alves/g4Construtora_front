@@ -7,13 +7,12 @@ export const Container = styled.div`
 
   display: grid;
   grid-template-columns: 25rem auto;
-  grid-template-rows: 6.5rem 12.8rem 12.8rem auto 6.4rem 6.4rem;
+  grid-template-rows: 6.5rem 12.8rem 12.8rem auto 6.4rem;
   grid-template-areas:
   "brand header"
   "menu search"
   "menu label"
   "menu content"
-  "sale content"
   "create content"
   ;
 
@@ -74,7 +73,7 @@ export const Menu = styled.ul`
   grid-area: menu;
   background-color: ${({ theme }) => theme.COLORS.GRAY_100};
 
-  padding-top: 6.4rem;
+  padding-top: 16rem;
   text-align: center;
 
   > li {
@@ -131,19 +130,3 @@ export const Create = styled.button`
   }
 `;
 
-export const Sale = styled(Link)`
-  grid-area: sale;
-
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
-  color: ${({ theme }) => theme.COLORS.TITLE_100};
-  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
-  border-radius:0 0 0.5rem 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    margin-right: 0.8rem;
-  }
-`;

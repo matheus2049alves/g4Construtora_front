@@ -6,6 +6,7 @@ export default {
     TITLE_200:"#666666",
     TEXT : "#777777",
     WHITE: "#F4EDE8",
+    ORANGE: "#FF9000",
     GRAY_300 : "#666360",
     GRAY_100: "#999591",
     RED: "#FF002E",

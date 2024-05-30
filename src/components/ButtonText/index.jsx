@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 import { Container } from './styles'
 
-export function ButtonText ({title, isActive = false , onClick, ...rest}) {
+export function ButtonText ({title, to="#", isActive = false , onClick, ...rest}) {
   return (
     <Container 
       type="button"
@@ -8,7 +10,7 @@ export function ButtonText ({title, isActive = false , onClick, ...rest}) {
       onClick={onClick}
       {...rest}
     >
-      { title }
+      <Link to={to}>{ title }</Link>
     </Container>
   )
 }

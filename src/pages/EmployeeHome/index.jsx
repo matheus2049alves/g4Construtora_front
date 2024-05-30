@@ -1,13 +1,13 @@
-import { FiPlus, FiSearch, FiDollarSign } from 'react-icons/fi';
+import { FiPlus, FiSearch} from 'react-icons/fi';
 import { RiShutDownLine } from "react-icons/ri";
 
-import { Container, Header, Logout, Brand, Menu, Search, Label, Content, Create, Sale } from './styles';
+import { Container, Header, Logout, Brand, Menu, Search, Label, Content, Create } from './styles';
 
 import { Input } from '../../components/Input';
-import { Imovel } from '../../components/Imovel';
+import { Property } from '../../components/Property';
 import { ButtonText } from '../../components/ButtonText';
 
-export function FuncHome() {
+export function EmployeeHome() {
 
   return (
     <Container>
@@ -28,15 +28,11 @@ export function FuncHome() {
       <Menu>
 
         <li>
-          <ButtonText title="Todos" />
+          <ButtonText title="Listar Imóveis" to="/" />
         </li>
 
         <li>
-          <ButtonText title="Disponiveis" />
-        </li>
-
-        <li>
-          <ButtonText title="Vendidos" />
+          <ButtonText title="Minhas Vendas" to="/sales" />
         </li>
 
       </Menu>
@@ -49,7 +45,7 @@ export function FuncHome() {
 
       <Content id="content">
 
-        <Imovel data={
+        <Property data={
           {
             id: '12345',
             descricao: 'Casa de dois andares, com varanda e vista para o mar. Ótima para criar os filhos, convidar a família e amigos para um churrascos. Vizinhos tranquilos e gentis.',
@@ -59,7 +55,7 @@ export function FuncHome() {
               bairro: 'Povoado Bambu',
               cidade: 'Pindaré Mirim'
             },
-            status: "CONCLUIDO"
+            status: "DISPONÍVEL"
 
           }
         }
@@ -67,11 +63,7 @@ export function FuncHome() {
 
       </Content>
 
-      <Sale to="/sales">
-        <FiDollarSign />
-        Acompanhar Vendas
-      </Sale>
-
+      
       <Create>
         <FiPlus />
         Cadastrar Imóvel
