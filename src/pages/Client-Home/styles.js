@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 10.5rem 34.5rem auto 10rem;
+  grid-template-rows: 7rem 34.5rem auto 10rem;
   grid-template-areas:  
   "header" "filter" "content" "footer" ;
 `
