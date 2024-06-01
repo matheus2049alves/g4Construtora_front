@@ -2,13 +2,22 @@ import styled from "styled-components";
 import Background from "../../assets/background.jpeg"
 
 export const Container = styled.div`
-    width: 75rem;
-    margin: 0 auto 20rem;
-    padding-top: 5rem;
+    width: 100%;
+    height: 100vh;
+    
+
+    >div {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+   
 
 `
 
 export const Form = styled.form`
+  width: 75rem;
   margin-top: 2.5rem;
   padding: 0 13.6rem;
   display: flex;
@@ -62,9 +71,6 @@ export const Select = styled.select`
 
 
 export const Header = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.COLORS.GRAY_300};
   padding: 20px;
