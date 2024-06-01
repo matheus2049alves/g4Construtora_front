@@ -32,7 +32,7 @@ export const Header = styled.header`
 
   display: flex;
   justify-content: space-between;
-
+  
   > a {
     margin-top: 1.6rem;
     svg {
@@ -44,15 +44,17 @@ export const Header = styled.header`
   padding: 0 8rem;
 
 `;
-
+ 
 export const Logout = styled.button`
   border: none;
   background: none;
 
-  > svg {
+  
+  svg {
     color: ${({ theme }) => theme.COLORS.TITLE_100};
     font-size: 3.6rem;
   }
+  
 `;
 
 export const Search = styled.div`

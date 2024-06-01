@@ -1,11 +1,11 @@
-import { FiPlus } from 'react-icons/fi';
+import { FiPlus} from 'react-icons/fi';
 import { RiShutDownLine } from "react-icons/ri";
 
-import { Container, Header, Logout, Brand, Menu, Label, Avatar, Content, Create, CreateEmployee } from './styles';
+import { Container, Header, Logout, Brand, Menu, Avatar, Label, Content, Create } from './styles';
 
 import { ButtonText } from '../../components/ButtonText';
 
-export function ManagerHome() {
+export function BrokerHome() {
 
   return (
     <Container>
@@ -33,10 +33,6 @@ export function ManagerHome() {
           <ButtonText title="Vendas" to="/sales" />
         </li>
 
-        <li>
-          <ButtonText title="Funcionários" to="/employees" />
-        </li>
-
       </Menu>
 
       <Avatar>
@@ -60,29 +56,24 @@ export function ManagerHome() {
           <dt>Nome Completo</dt>
           <dd>Diogo Brasil Da Silva</dd>
           <dt>Cargo</dt>
-          <dd>Gerente</dd>
+          <dd>Corretor</dd>
           <dt>Contrato</dt>
           <dd>Temporário</dd>
           <dt>Data de Início de Contrato</dt>
           <dd>01/01/2024</dd>
           <dt>Data do Final de Contrato</dt>
-          <dd>01/01/2030</dd>
+          <dd>01/01/2025</dd>
           <dt>Tempo de Contrato</dt>
-          <dd>5 Anos</dd>
+          <dd>1 Ano</dd>
         </dl>
 
       </Content>
 
 
-      <Create to="#">
+      <Create>
         <FiPlus />
         Cadastrar Imóvel
       </Create>
-
-      <CreateEmployee to="#">
-        <FiPlus />
-        Cadastrar Funcionário
-      </CreateEmployee>
 
     </Container>
   )

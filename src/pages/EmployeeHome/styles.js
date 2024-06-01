@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -6,48 +5,16 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-columns: 25rem auto;
-  grid-template-rows: 6.5rem 12.8rem 12.8rem auto 6.4rem;
+  grid-template-columns: auto;
+  grid-template-rows: 6.5rem 15.8rem 10.8rem auto;
   grid-template-areas:
-  "brand header"
-  "menu search"
-  "menu label"
-  "menu content"
-  "create content"
+  "header"
+  "avatar"
+  "label"
+  "content"
   ;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_100};
-`;
-
-export const Header = styled.header`
-
-  grid-area: header;
-
-  height: 6.5rem;
-  width: 100%;
-
-  border-bottom-width: 0.1rem;
-  border-bottom-style: solid;
-  border-color: ${({ theme }) => theme.COLORS.GRAY_100};
-  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
- 
-
-  display: flex;
-  justify-content: right;
-  align-items: center;
-
-  padding: 0 8rem;
-
-`;
- 
-export const Logout = styled.button`
-  border: none;
-  background: none;
-
-  > svg {
-    color: ${({ theme }) => theme.COLORS.TITLE_100};
-    font-size: 3.6rem;
-  }
 `;
 
 export const Brand = styled.div`
@@ -69,6 +36,64 @@ export const Brand = styled.div`
   }
 `;
 
+export const Header = styled.header`
+
+  grid-area: header;
+  
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+  "g4 opt logout"
+  ;
+
+  height: 6.5rem;
+  width: 100%;
+
+  border-bottom-width: 0.1rem;
+  border-bottom-style: solid;
+  border-color: ${({ theme }) => theme.COLORS.GRAY_100};
+  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
+   
+  padding: 0 8rem;
+
+  > h1 {
+    
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    color: ${({ theme }) => theme.COLORS.TITLE_100};
+    font-size: 3.6rem;
+  }
+
+  > div {
+    grid-area: opt;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    a {
+      margin: auto;
+      color: ${({ theme }) => theme.COLORS.TITLE_100};
+    }
+  }
+
+`;
+
+export const Logout = styled.button`
+  grid-area: logout;
+  border: none;
+  background: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  > svg {
+    color: ${({ theme }) => theme.COLORS.TITLE_100};
+    font-size: 3.6rem;
+  }
+`;
+
 export const Menu = styled.ul`
   grid-area: menu;
   background-color: ${({ theme }) => theme.COLORS.GRAY_100};
@@ -82,9 +107,35 @@ export const Menu = styled.ul`
 
 `;
 
-export const Search = styled.div`
-  grid-area: search;
+export const Avatar = styled.div`
+  grid-area: avatar;
+  display: flex;
+  align-items: center;
+
   padding: 6.4rem 6.4rem 0;
+
+  > img {
+    width: 12.8rem;
+    height: 12.8rem;
+    border-radius: 10%;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.6rem;
+    line-height: 2.4rem;
+
+    span {
+      font-size: 1.4rem;
+      color: ${({ theme }) => theme.COLORS.TEXT};
+    }
+
+    strong {
+      font-size: 1.8rem;
+      color: ${({ theme }) => theme.COLORS.TITLE_100};
+    }
+  }
 `;
 
 export const Label = styled.section`
@@ -111,22 +162,24 @@ export const Content = styled.div`
   grid-area: content;
   padding: 0 6.4rem;
   overflow-y: auto;
-`;
 
-export const Create = styled.button`
-  grid-area: create;
+  dl {
+    width: 100%;
+    padding: 2rem;
+    background-color:${({ theme }) => theme.COLORS.BACKGROUND_200} ;
+    border-radius: 0.5rem;
+    text-align: left;
+    dt {
+      color: ${({ theme }) => theme.COLORS.TITLE_100};
+      font-size: 2rem;
+      margin-bottom: 0.5rem
+    }
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200 };
-  color: ${({ theme }) => theme.COLORS.BACKGROUND_TEXT};
-  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
-  border-radius:0 0.5rem 0 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    margin-right: 0.8rem;
+    dd {
+      color: ${({ theme }) => theme.COLORS.TEXT};
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border-bottom: 0.1rem solid #ccc
+    } 
   }
 `;
-

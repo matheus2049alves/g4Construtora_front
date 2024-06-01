@@ -1,23 +1,21 @@
-import { FiPlus, FiSearch} from 'react-icons/fi';
 import { RiShutDownLine } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 
-import { Container, Header, Logout, Brand, Menu, Search, Label, Content, Create } from './styles';
-
-import { Input } from '../../components/Input';
-import { Property } from '../../components/Property';
-import { ButtonText } from '../../components/ButtonText';
+import { Container, Header, Logout, Label, Avatar, Content} from './styles';
 
 export function EmployeeHome() {
 
   return (
     <Container>
-      <Brand>
-        <h2>
-          G4
-        </h2>
-      </Brand>
-
+      
       <Header>
+
+        <h1>G4</h1>
+
+        <div>
+          <Link to="#">Listar Imóveis</Link>
+          <Link to="#">Cadastrar Imóvel</Link>
+        </div>
 
         <Logout>
           <RiShutDownLine />
@@ -25,49 +23,39 @@ export function EmployeeHome() {
 
       </Header>
 
-      <Menu>
+      <Avatar>
 
-        <li>
-          <ButtonText title="Listar Imóveis" to="/" />
-        </li>
+        <img
+          src="http://github.com/diogobrasil.png"
+          alt="Foto do Usuário"
+        />
 
-        <li>
-          <ButtonText title="Minhas Vendas" to="/sales" />
-        </li>
+        <div>
+          <span>Bem-Vindo</span>
+          <strong>Diogo Brasil</strong>
+        </div>
+      </Avatar>
 
-      </Menu>
-
-      <Search>
-        <Input placeholder="Pesquisar pelo id" icon={FiSearch} />
-      </Search>
-
-      <Label><h2>Imóveis</h2></Label>
+      <Label><h2>Informações</h2></Label>
 
       <Content id="content">
 
-        <Property data={
-          {
-            id: '12345',
-            descricao: 'Casa de dois andares, com varanda e vista para o mar. Ótima para criar os filhos, convidar a família e amigos para um churrascos. Vizinhos tranquilos e gentis.',
-            endereco: {
-              cep: '65370-000',
-              rua: 'Rua Das Flores',
-              bairro: 'Povoado Bambu',
-              cidade: 'Pindaré Mirim'
-            },
-            status: "DISPONÍVEL"
-
-          }
-        }
-        />
+        <dl>
+          <dt>Nome Completo</dt>
+          <dd>Diogo Brasil Da Silva</dd>
+          <dt>Cargo</dt>
+          <dd>Serviços Gerais</dd>
+          <dt>Contrato</dt>
+          <dd>Temporário</dd>
+          <dt>Data de Início de Contrato</dt>
+          <dd>01/01/2024</dd>
+          <dt>Data do Final de Contrato</dt>
+          <dd>01/01/2030</dd>
+          <dt>Tempo de Contrato</dt>
+          <dd>5 Anos</dd>
+        </dl>
 
       </Content>
-
-      
-      <Create>
-        <FiPlus />
-        Cadastrar Imóvel
-      </Create>
 
     </Container>
   )
