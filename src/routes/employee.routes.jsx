@@ -6,6 +6,7 @@ import { DetailsProperty } from "../pages/DetailsProperty";
 import { Properties } from "../pages/Properties";
 import { Employees } from "../pages/Employees";
 import { Sales } from "../pages/Sales";
+import { CondominiumRegistration } from "../pages/Condominium_registration";
 export function EmployeeRoutes(){
   return(
     <Routes>
@@ -16,6 +17,7 @@ export function EmployeeRoutes(){
       <Route path="/properties" element = {<Properties/>}/>
       <Route path="/sales" element = {<Sales/>}/>
       <Route path="/employees" element = {<Employees/>}/>
+      <Route path ="/condominio/registrar" element = {<CondominiumRegistration/>}/>
     </Routes>
   )
 }
