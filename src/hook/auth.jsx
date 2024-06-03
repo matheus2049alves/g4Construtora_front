@@ -23,7 +23,10 @@ function AuthProvider({children}){
     
 
   }
-
+  function signOut(){
+    localStorage.removeItem("@g4construtora : sucesso")
+    setData({})
+  }
   useEffect(() => {
     const sucesso = localStorage.getItem("@g4construtora : sucesso")
     if (sucesso){
@@ -34,7 +37,7 @@ function AuthProvider({children}){
   },[])
 
   return(
-    <AuthContext.Provider value ={{signIn,user : data.sucesso }}>
+    <AuthContext.Provider value ={{signIn,user : data.sucesso,signOut}}>
       {children}
     </AuthContext.Provider>
   )
