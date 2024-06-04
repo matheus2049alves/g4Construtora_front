@@ -11,6 +11,7 @@ function AuthProvider({children}){
       const response = await api.post("/Login", {cpf, password})
         const {sucesso} = response.data
         setData({sucesso})
+        console.log(sucesso)
         localStorage.setItem("@g4construtora : sucesso", JSON.stringify(sucesso))
       
     } catch (error) {

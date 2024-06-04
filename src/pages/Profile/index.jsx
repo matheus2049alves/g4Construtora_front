@@ -7,7 +7,6 @@ import { Label } from '../../components/Label';
 import { Input } from '../../components/Input';
 
 import {Container, Form, Avatar, Select} from './styles';
-
 export function Profile () {
   return (
     <Container>
