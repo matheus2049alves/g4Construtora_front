@@ -8,7 +8,8 @@ import { EmployeeHome } from "../pages/EmployeeHome";
  
 
 export function Routes(){
-  const {id} = useAuth()
+  //const {id} = useAuth()
+  const id = 1
   return(
     <BrowserRouter>
    {id ?  <EmployeeRoutes/> :  <AuthRoutes/>  }

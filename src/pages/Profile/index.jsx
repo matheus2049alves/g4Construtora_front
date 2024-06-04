@@ -66,7 +66,7 @@ export function Profile () {
 
         <Input
           placeholder="000.000.000-00"
-          type="tel"
+          type="text"
           id="cpf"
         />
 

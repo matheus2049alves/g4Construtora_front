@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
+  margin-bottom: 1.2rem;
 
   > header {
     width: 100%;
@@ -23,7 +24,7 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-  max-width: 34rem;
+  max-width: 75rem;
   margin: 3rem auto 0;
 
   .label {
@@ -35,7 +36,7 @@ export const Form = styled.form`
     -webkit-appearance: none;
     margin: 0;
   }
-  
+
 `;
 
 export const Avatar = styled.div`
@@ -84,7 +85,7 @@ export const Select = styled.select`
   width: 100%;
   height: 5.6rem;
   padding: 1.6rem;
-  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
+  border: 0.1rem solid ${({ theme }) => theme.COLORS.GRAY_300};
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
   color: ${({ theme }) => theme.COLORS.TITLE_100};
   border: none;
