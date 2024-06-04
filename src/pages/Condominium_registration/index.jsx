@@ -2,8 +2,44 @@ import { Container, Form,InputContainer,Header } from "./styles";
 import { Label } from "../../components/Label";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { useState } from "react";
+import { api } from "../../services/api"; 
 
 export function CondominiumRegistration(){
+  const [nome,setNome] = useState("")
+  const [quantideImoveis, setQuantidadeImoveis] = useState(0)
+  const [amenidades, setAmenidades] = useState("")
+  const [usa_taxa, setTaxa] = useState(0)
+  const [anoConstrução, setAnoConstrução] = useState(0)
+  const [status, setStatus] = useState("")
+  const [rua, setRua] = useState("")
+  const [recebe_numero, setNumero] = useState(0)
+  const [cidade, setCidade] = useState("")
+  const [estado, setEstado] = useState("")
+  const [cep, setCep] = useState("")
+  
+  function handleSignUp(){
+    if (!quantideImoveis || !nome || !amenidades || !usa_taxa || !anoConstrução || !status || !rua || !recebe_numero || !cidade || !estado || !cep ){
+      return (alert("Preencha todos os campos"))
+    }
+
+    const quantidade_imoveis = Number(quantideImoveis)
+    const taxa = Number(usa_taxa)
+    const ano_construcao = Number(anoConstrução)
+    const numero = Number(recebe_numero)
+
+    api.post("/condominio/cadastrar", {quantidade_imoveis, taxa,ano_construcao,numero, nome, amenidades,status, rua, cidade, estado, cep})
+    .then(() => {
+      alert("Condomínio cadastrado")
+    }).catch(error => {
+      if (error.response){
+        alert(error.response.data.message)
+      }else{
+        alert("Não foi possível cadastrar")
+      }
+    })
+  }
+
   return(
     <Container>
   
@@ -25,6 +61,7 @@ export function CondominiumRegistration(){
               placeholder = "nome do condomínio"
               type = "text"
               id = "name"
+              onChange = {e => setNome(e.target.value)}
             />
           </div>
           <div >
@@ -33,6 +70,7 @@ export function CondominiumRegistration(){
                 width={"23.15rem"}
                 placeholder = "Quantos imóveis?"
                 type = "text"
+                onChange = {e => setQuantidadeImoveis(e.target.value)}
                 />
           </div>
         </InputContainer>
@@ -45,6 +83,7 @@ export function CondominiumRegistration(){
               placeholder = "20%"
               type = "text"
               id = "tax"
+              onChange = {e => setTaxa(e.target.value)}
             />
           </div>
           <div >
@@ -52,6 +91,7 @@ export function CondominiumRegistration(){
               <Input 
                 width={"23.15rem"}
                 type = "number"
+                onChange = {e => setAnoConstrução(e.target.value)}
                 />
           </div>
         </InputContainer>
@@ -61,10 +101,11 @@ export function CondominiumRegistration(){
               placeholder = "Novo"
               type = "status"
               id = "tax"
+              onChange = {e => setStatus(e.target.value)}
         
         />
         <Label htlmFor={"amenidades"}>Amenidades</Label>
-        <textarea name="amenidades" id="amenidades"></textarea>
+        <textarea name="amenidades" id="amenidades"  onChange = {e => setAmenidades(e.target.value)}></textarea>
 
         <legend>Informações de Endereço</legend>
         <InputContainer>
@@ -76,6 +117,7 @@ export function CondominiumRegistration(){
               placeholder = "Maranhão"
               type = "text"
               id = "name"
+              onChange = {e => setEstado(e.target.value)}
             />
           </div>
           <div >
@@ -84,6 +126,7 @@ export function CondominiumRegistration(){
                 width={"23.15rem"}
                 placeholder = "São Luis"
                 type = "text"
+                onChange = {e => setCidade(e.target.value)}
                 />
           </div>
         </InputContainer>
@@ -96,6 +139,7 @@ export function CondominiumRegistration(){
               placeholder = "Rua das Oliveiras"
               type = "text"
               id = "name"
+              onChange = {e => setRua(e.target.value)}
             />
           </div>
           <div >
@@ -104,6 +148,7 @@ export function CondominiumRegistration(){
                 width={"23.15rem"}
                 placeholder = "203"
                 type = "number"
+                onChange = {e => setNumero(e.target.value)}
                 />
           </div>
         </InputContainer>
@@ -113,8 +158,10 @@ export function CondominiumRegistration(){
               placeholder = "65213-000"
               type = "text"
               id = "CEP"
+              onChange = {e => setCep(e.target.value)}
         
         />
+        <Button title={"Cadastrar"} onClick = {handleSignUp}/>
       </Form>
       </div>
   

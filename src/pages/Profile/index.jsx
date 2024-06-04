@@ -5,9 +5,18 @@ import { Section } from '../../components/Section';
 import { Button } from '../../components/Button';
 import { Label } from '../../components/Label';
 import { Input } from '../../components/Input';
-
+import { useAuth } from '../../hook/auth';
+import { useState } from 'react';
 import {Container, Form, Avatar, Select} from './styles';
+
 export function Profile () {
+  const {user} = useAuth()
+
+  const [cpf, setCpf] = useState("")
+  const [nome, setNome] = useState("")
+  const [numeroDeFilhos, setNumerodeFilhos] = useState(0)
+  const [estado_civil, setEstadoCivil] = useState("")
+  const [renda2, setRenda] = useState(0) 
   return (
     <Container>
 
@@ -46,10 +55,11 @@ export function Profile () {
         <Label htmlFor={"name"} className="label">Nome</Label>
 
         <Input
-          placeholder="Seu nome completo"
+          placeholder={user.nome}
           type="text"
           icon={FiUser}
           id="name"
+          onChange = {e => setNome(e.target.value)}
         />
         
         <Label htmlFor={"email"} className="label">Endereço de e-mail</Label>
@@ -64,7 +74,7 @@ export function Profile () {
         <Label htmlFor={"cpf"} className="label">Nº do CPF</Label>
 
         <Input
-          placeholder="000.000.000-00"
+          placeholder={user.cpf}
           type="text"
           id="cpf"
         />
@@ -72,7 +82,7 @@ export function Profile () {
         <Label htmlFor={"renda"} className="label">Renda Mensal</Label>
 
         <Input
-          placeholder="Renda"
+          placeholder={user.renda}
           icon={FiDollarSign}
           type="number"
           id="renda"
@@ -81,7 +91,7 @@ export function Profile () {
         <Label htmlFor={"filhos"} className="label">Nº de Filhos</Label>
 
         <Input
-          placeholder="Quantos filhos você tem?"
+          placeholder={user.numero_de_filhos}
           type="number"
           id="filhos"
         />
