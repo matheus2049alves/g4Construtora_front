@@ -2,42 +2,63 @@ import styled from "styled-components";
 import Background from "../../assets/background.jpeg"
 
 export const Container = styled.div`
+  &::before {
+    content: "";
+    background: ${({ theme }) => theme.COLORS.GRAY_300};;
+    display: block;
     width: 100%;
-    height: 100vh;
-    margin-bottom: 30rem;
-
-    >div {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-
-      
-    }
+    height: 43.6rem;
+    position: absolute;
+   z-index: -1;
+  }
    
-
 `
-
-export const Form = styled.form`
+export const Page = styled.div`
   width: 75rem;
-  height: 110rem;
-  margin-top: 2.5rem;
-  justify-content: center;
+  margin: 0 auto 30rem;
+  padding-top: 13rem;
+  margin-bottom: 30rem;
+`
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  min-height: 40rem;
   border-radius: 20px 20px 20px 20px;
   background: #FFF;
-  padding: 6.4rem;
+  padding: 6.4rem; 
+  background-color: ${({theme}) => theme.COLORS.BACKGROUND_300};
   
-  >textarea {
-    width: 50rem;
-    height: 15rem;
-    padding: .5rem;
-    margin-bottom: 2rem;
+  >legend {
+    color: ${({theme}) => theme.COLORS.TITLE_100};
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+    width: 100%;
+    border-bottom: 1px solid #E6E6F0;
+    padding-bottom: 1.6rem;
   }
 
-  >legend {
-    color: ${({theme}) => theme.COLORS.TITLE_200};
-    margin-bottom: 1rem;
+  .amenidades {
+    width: 100%;
+
+    textarea {
+      width: 100%;
+      min-height: 150px; 
+      border: 1px solid #ccc; 
+      border-radius: .4rem;   
+      resize: vertical;      
+      font-size: 1.6rem;     
+      padding: 1rem;
+      background-color: ${({theme}) => theme.COLORS.BACKGROUND_200};
+
+      &:focus {
+      outline: none;         
+      border-color: #007bff;
+     
+    }
   }
+  }
+  
   
 
   >h2 {
@@ -57,24 +78,13 @@ export const Form = styled.form`
 
 export const InputContainer = styled.div`
   display: flex;
-  gap: 3.3rem;
+  gap: 2.2rem;
   margin-bottom: 1.5rem;
 
 `
 
-export const BackgroundImg = styled.div`
-  flex : 1;
-  background: url(${Background}) no-repeat center center;
-  background-size: cover;
-`
-
 export const Header = styled.header`
-  width: 100%;
-  background-color: ${({ theme }) => theme.COLORS.GRAY_300};
-  padding: 20px;
-  z-index: 10; 
-  align-items: center;
-  text-align: center;
+ 
   
   >h1 {
     font-size: 3.5rem;
@@ -82,7 +92,11 @@ export const Header = styled.header`
   }
 
   >p {
-    font-size: 1.4rem;
-    color: ${({theme}) => theme.COLORS.BACKGROUND_200}
+
+  font-size: 2rem;
+  color: ${({theme}) => theme.COLORS.BACKGROUND_200};
+  line-height: normal;
+  max-width: 41.7rem;
+  margin-bottom: 5.8rem;
   }
 `

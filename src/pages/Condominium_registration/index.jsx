@@ -1,4 +1,4 @@
-import { Container, Form,InputContainer,Header } from "./styles";
+import { Container, Form,InputContainer,Header, Page} from "./styles";
 import { Label } from "../../components/Label";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -42,129 +42,132 @@ export function CondominiumRegistration(){
 
   return(
     <Container>
-  
-      <Header>
-        <h1>G4 Construtora</h1>
-        <p>Construa sua vida com a gente</p>
-      </Header>
-      <div>
-      <Form>
-        
-        <h2>Cadastro de Condomínio</h2>
-
-        <InputContainer>
-          <div className="wrapper">
+      <Page>
+        <Header>
+          <h1>Cadastro de Condomínio</h1>
+          <p>Preencha o formulário abaixo para cadastrar um novo condomínio</p>
+        </Header>
+        <Form>
           
-            <Label htlmFor={"name"}>Nome</Label>
-            <Input 
-              width={"23.15rem"}
-              placeholder = "nome do condomínio"
-              type = "text"
-              id = "name"
-              onChange = {e => setNome(e.target.value)}
-            />
-          </div>
-          <div >
-            <Label htlmFor={"last_name"}>Quantidade de Imóveis</Label>
+         
+          <legend>Informações Gerais</legend>
+          <InputContainer>
+            <div className="wrapper">
+            
+              <Label htlmFor={"name"}>Nome</Label>
               <Input 
-                width={"23.15rem"}
-                placeholder = "Quantos imóveis?"
+                width={"30rem"}
+                placeholder = "nome do condomínio"
                 type = "text"
-                onChange = {e => setQuantidadeImoveis(e.target.value)}
-                />
-          </div>
-        </InputContainer>
-        <InputContainer>
-          <div className="wrapper">
-          
-            <Label htlmFor={"tax"}>Taxa</Label>
-            <Input 
-              width={"23.15rem"}
-              placeholder = "20%"
-              type = "text"
-              id = "tax"
-              onChange = {e => setTaxa(e.target.value)}
-            />
-          </div>
-          <div >
-            <Label htlmFor={"last_name"}>Ano de Construção</Label>
+                id = "name"
+                onChange = {e => setNome(e.target.value)}
+              />
+            </div>
+            <div >
+              <Label htlmFor={"last_name"}>Quantidade de Imóveis</Label>
+                <Input 
+                  width={"30rem"}
+                  placeholder = "Quantos imóveis?"
+                  type = "text"
+                  onChange = {e => setQuantidadeImoveis(e.target.value)}
+                  />
+            </div>
+          </InputContainer>
+          <InputContainer>
+            <div className="wrapper">
+            
+              <Label htlmFor={"tax"}>Taxa</Label>
               <Input 
-                width={"23.15rem"}
-                type = "number"
-                onChange = {e => setAnoConstrução(e.target.value)}
-                />
-          </div>
-        </InputContainer>
-        <Label htlmFor={"status"}>Status</Label>
-            <Input 
-              width={"49.8rem"}
-              placeholder = "Novo"
-              type = "status"
-              id = "tax"
-              onChange = {e => setStatus(e.target.value)}
-        
-        />
-        <Label htlmFor={"amenidades"}>Amenidades</Label>
-        <textarea name="amenidades" id="amenidades"  onChange = {e => setAmenidades(e.target.value)}></textarea>
-
-        <legend>Informações de Endereço</legend>
-        <InputContainer>
-          <div className="wrapper">
-          
-            <Label htlmFor={"rua"}>Estado</Label>
-            <Input 
-              width={"23.15rem"}
-              placeholder = "Maranhão"
-              type = "text"
-              id = "name"
-              onChange = {e => setEstado(e.target.value)}
-            />
-          </div>
-          <div >
-            <Label htlmFor={"City"}>Cidade</Label>
-              <Input 
-                width={"23.15rem"}
-                placeholder = "São Luis"
+                width={"30rem"}
+                placeholder = "20%"
                 type = "text"
-                onChange = {e => setCidade(e.target.value)}
-                />
-          </div>
-        </InputContainer>
-        <InputContainer>
-          <div className="wrapper">
-          
-            <Label htlmFor={"Rua"}>Rua</Label>
-            <Input 
-              width={"23.15rem"}
-              placeholder = "Rua das Oliveiras"
-              type = "text"
-              id = "name"
-              onChange = {e => setRua(e.target.value)}
-            />
-          </div>
-          <div >
-            <Label htlmFor={"last_name"}>Número da Casa</Label>
+                id = "tax"
+                onChange = {e => setTaxa(e.target.value)}
+              />
+            </div>
+            <div >
+              <Label htlmFor={"last_name"}>Ano de Construção</Label>
+                <Input 
+                  width={"30rem"}
+                  type = "number"
+                  onChange = {e => setAnoConstrução(e.target.value)}
+                  />
+            </div>
+          </InputContainer>
+          <div>
+          <Label htlmFor={"status"}>Status</Label>
               <Input 
-                width={"23.15rem"}
-                placeholder = "203"
-                type = "number"
-                onChange = {e => setNumero(e.target.value)}
-                />
+                width={"62.2rem"}
+                placeholder = "Novo"
+                type = "status"
+                id = "tax"
+                onChange = {e => setStatus(e.target.value)}
+          
+          />
           </div>
-        </InputContainer>
-        <Label htlmFor={"status"}>CEP</Label>
-            <Input 
-              width={"49.8rem"}
-              placeholder = "65213-000"
-              type = "text"
-              id = "CEP"
-              onChange = {e => setCep(e.target.value)}
-        
-        />
-        <Button title={"Cadastrar"} onClick = {handleSignUp}/>
-      </Form>
-      </div>
-  
+
+          <div className="amenidades">
+          <Label htlmFor={"amenidades"}>Amenidades</Label>
+          <textarea name="amenidades" id="amenidades"  onChange = {e => setAmenidades(e.target.value)}></textarea>
+          </div>
+          <legend>Informações de Endereço</legend>
+          <InputContainer>
+            <div className="wrapper">
+            
+              <Label htlmFor={"rua"}>Estado</Label>
+              <Input 
+                width={"30rem"}
+                placeholder = "Maranhão"
+                type = "text"
+                id = "name"
+                onChange = {e => setEstado(e.target.value)}
+              />
+            </div>
+            <div >
+              <Label htlmFor={"City"}>Cidade</Label>
+                <Input 
+                  width={"30rem"}
+                  placeholder = "São Luis"
+                  type = "text"
+                  onChange = {e => setCidade(e.target.value)}
+                  />
+            </div>
+          </InputContainer>
+          <InputContainer>
+            <div className="wrapper">
+            
+              <Label htlmFor={"Rua"}>Rua</Label>
+              <Input 
+                width={"30rem"}
+                placeholder = "Rua das Oliveiras"
+                type = "text"
+                id = "name"
+                onChange = {e => setRua(e.target.value)}
+              />
+            </div>
+            <div >
+              <Label htlmFor={"last_name"}>Número da Casa</Label>
+                <Input 
+                  width={"30rem"}
+                  placeholder = "203"
+                  type = "number"
+                  onChange = {e => setNumero(e.target.value)}
+                  />
+            </div>
+          </InputContainer>
+          <Label htlmFor={"status"}>CEP</Label>
+              <Input 
+                width={"62.2rem"}
+                placeholder = "65213-000"
+                type = "text"
+                id = "CEP"
+                onChange = {e => setCep(e.target.value)}
+          
+          />
+          <Button title={"Cadastrar"} onClick = {handleSignUp}/>
+        </Form>
+      </Page>
+ 
     </Container>
   )
 }

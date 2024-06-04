@@ -6,10 +6,43 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { Button } from '../../components/Button';
 import { Label } from '../../components/Label';
 import { Input } from '../../components/Input';
+import { api } from '../../services/api';
+import { useState } from 'react';
 
 import { Container, Form, Avatar, Select } from './styles';
 
 export function CreateEmployee() {
+
+  const [nome,setNome] = useState("")
+  const [cpf,setCpf] = useState("")
+  const [nFilhos,setFilhos] = useState("")
+  const [estado_civil, setEstadoCivil] = useState("")
+  const [recebe_renda, setRenda] = useState("")
+  const [funcao, setFuncao] = useState("")
+  const [data_pagamento,setPagamento] = useState("")
+  const [cargaHoraria, setCargaHoraria] = useState("")
+
+
+  function HandleCreateEmployee(){
+    if (!nome || !cpf || !nFilhos || !estado_civil || !recebe_renda || !funcao || !data_pagamento || !cargaHoraria){
+      return (alert("Preencha todos os campos"))
+    }
+
+    const numero_de_filhos = Number(nFilhos)
+    const renda = Number(recebe_renda)
+    const carga_horaria  = Number(cargaHoraria)
+    console.log(numero_de_filhos, renda,carga_horaria, nome,cpf,estado_civil, funcao, data_pagamento)
+    api.post("/funcionario/cadastro", {numero_de_filhos, renda,carga_horaria, nome,cpf,estado_civil, funcao, data_pagamento})
+    .then(() => {
+      alert("Funcionário cadastrado")
+    }).catch(error => {
+      if (error.response){
+        alert(error.response.data.message)
+      }else{
+        alert("Não foi possível cadastrar")
+      }
+    })
+  }
   return (
     <Container>
 
@@ -52,6 +85,7 @@ export function CreateEmployee() {
           type="text"
           icon={FiUser}
           id="name"
+          onChange = {e => setNome(e.target.value)}
         />
 
         <Label htmlFor={"funcao"} className="label">Função</Label>
@@ -61,6 +95,7 @@ export function CreateEmployee() {
           type="text"
           icon={FaUserTie}
           id="funcao"
+          onChange = {e => setFuncao(e.target.value)}
         />
 
         <Label htmlFor={"cpf"} className="label">Nº do CPF</Label>
@@ -69,6 +104,7 @@ export function CreateEmployee() {
           placeholder="000.000.000-00"
           type="text"
           id="cpf"
+          onChange = {e => setCpf(e.target.value)}
         />
 
         <Label htmlFor={"cargaHoraria"} className="label">Carga Horária</Label>
@@ -77,6 +113,7 @@ export function CreateEmployee() {
           type="number"
           icon={FaRegClock}
           id="cargaHoraria"
+          onChange = {e => setCargaHoraria(e.target.value)}
         />
 
         <Label htmlFor={"dataPagamento"} className="label">Data de Pagamento</Label>
@@ -85,6 +122,7 @@ export function CreateEmployee() {
           type="text"
           icon={MdDateRange}
           id="dataPagamento"
+          onChange = {e => setPagamento(e.target.value)}
         />
 
         <Label htmlFor={"renda"} className="label">Renda Mensal</Label>
@@ -94,6 +132,7 @@ export function CreateEmployee() {
           icon={FiDollarSign}
           type="number"
           id="renda"
+          onChange = {e => setRenda(e.target.value)}
         />
 
         <Label htmlFor={"filhos"} className="label">Nº de Filhos</Label>
@@ -102,11 +141,12 @@ export function CreateEmployee() {
           placeholder="Digite o número de filhos do contribuinte"
           type="number"
           id="filhos"
+          onChange = {e => setFilhos(e.target.value)}
         />
 
         <Label htlmFor={"estadoCivil"} className="label">Estado Civil</Label>
 
-        <Select id="estadoCivil" name="estadoCivil">
+        <Select id="estadoCivil" name="estadoCivil" onChange = {e => setEstadoCivil(e.target.value)}>
           <option value="solteiro">Solteiro(a)</option>
           <option value="casado">Casado(a)</option>
           <option value="divorciado">Divorciado(a)</option>
@@ -114,7 +154,7 @@ export function CreateEmployee() {
           <IoIosArrowDown />
         </Select>
 
-        <Button title="Salvar" />
+        <Button title="Salvar" onClick = {HandleCreateEmployee} />
 
       </Form>
 
