@@ -1,8 +1,35 @@
 import { Container,Details, AboutProperty} from "./styles";
 import { Button } from "../../components/Button";
 import {Header} from "../../components/Header"
+import { useParams } from "react-router-dom";
+import { useEffect , useState} from "react";
+import { api } from "../../services/api";
 
 export function PropertyDetails(){
+  const {id} = useParams()
+  const [property, setProperty] = useState("");
+
+  useEffect(() => {
+    async function fetchProperties() {
+      try {
+        const response = await api.get(`/imovel/buscar/${id}`);
+        const {imovel} = response.data
+        setProperty(imovel)
+      } catch (error) {
+        if (error){
+          alert(error.response.data.message)
+        }
+        console.error("Erro ao buscar imóveis:", error);
+      }
+    }
+
+    
+  
+    fetchProperties(); 
+  }, [id]); 
+  console.log(property)
+  
+
   return(
     <Container>
       <Header/>
@@ -13,8 +40,8 @@ export function PropertyDetails(){
          />
 
          <div className="NameInformation">
-          <p>São Luis</p>
-          <h2>Limoeiro Verde</h2>
+          <p>{property.cidade}</p>
+          <h2>{property.nome}</h2>
          </div>
 
         <div className="PurchaseBox">
@@ -26,17 +53,17 @@ export function PropertyDetails(){
           <h2>Detalhes do imóvel</h2>
           <dl>
             <dt>Nome do condomínio</dt>
-            <dd>Vila Sésamo</dd>
+            <dd>{property.nome}</dd>
             <dt>Tipo de imóvel</dt>
-            <dd>Casa</dd>
+            <dd>{property.tipo}</dd>
             <dt>Área do imóvel</dt>
-            <dd>500 x 600</dd>
+          <dd>{`${property.area_total} m²`}</dd>
             <dt>Estado do imóvel</dt>
-            <dd>Novo</dd>
+            <dd>{property.imovel_estado}</dd>
             <dt>Número de quartos</dt>
-            <dd>4</dd>
+            <dd>{property.num_quartos}</dd>
             <dt>Número de banheiros</dt>
-            <dd>2</dd>
+            <dd>{property.num_banheiros}</dd>
           </dl>
 
         </AboutProperty>

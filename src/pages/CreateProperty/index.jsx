@@ -7,28 +7,28 @@ import { api } from "../../services/api";
 
 export function CreateProperty(){
 
-  const [id_condominio,setIDCondominio] = useState(0)
-  const [tipoImovel, setTipoImovel] = useState(0)
+  const [idCondomio,setIDCondominio] = useState(0)
+  const [tipo, setTipoImovel] = useState(" ")
   const [usa_preco, setPreco] = useState(0)
   const [area, setArea] = useState(0)
-  const [status, setStatus] = useState("")
+  const [estado, setStatus] = useState("")
   const [recebe_quartos, setQuarto] = useState(0)
   const [recebe_banheiros, setBanheiro] = useState(0)
   
   
   function handleSignUp(){
-    if (!id_condominio || !tipoImovel || !usa_preco || !area || !status || !recebe_quartos || !recebe_banheiros ){
+    if (!idCondomio || !tipo || !usa_preco || !area || !estado || !recebe_quartos || !recebe_banheiros ){
 
       return (alert("Preencha todos os campos"))
     }
 
-    const condominio = Number(id_condominio)
+    const id_condominio = Number(idCondomio)
     const preco = Number(usa_preco)
-    const area_imovel = Number(area)
-    const numeroQuartos = Number(recebe_quartos)
-    const numeroBanheiros = Number(recebe_banheiros)
+    const area_total = Number(area)
+    const num_quartos = Number(recebe_quartos)
+    const num_banheiros = Number(recebe_banheiros)
 
-    api.post("/imovel/cadastrar", {tipoImovel, preco, area_imovel, numeroQuartos, numeroBanheiros, condominio, status })
+    api.post("/imovel/cadastrar", { tipo, preco, area_total,num_quartos, num_banheiros, id_condominio, status: estado })
     .then(() => {
       alert("Imóvel cadastrado")
     }).catch(error => {
@@ -121,6 +121,17 @@ export function CreateProperty(){
                   />
             </div>
           </InputContainer>
+          <div>
+          <Label htlmFor={"status"}>Status</Label>
+              <Input 
+                width={"62.2rem"}
+                placeholder = "Novo"
+                type = "status"
+                id = "tax"
+                onChange = {e => setStatus(e.target.value)}
+          
+          />
+          </div>
 
           <Button title={"Cadastrar"} onClick = {handleSignUp}/>
 
