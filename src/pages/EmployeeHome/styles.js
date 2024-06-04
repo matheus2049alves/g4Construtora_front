@@ -127,7 +127,7 @@ export const Avatar = styled.div`
     line-height: 2.4rem;
 
     span {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       color: ${({ theme }) => theme.COLORS.TEXT};
     }
 

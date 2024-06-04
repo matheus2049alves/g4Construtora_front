@@ -13,8 +13,10 @@ export function EmployeeHome() {
         <h1>G4</h1>
 
         <div>
-          <Link to="#">Listar Imóveis</Link>
-          <Link to="#">Cadastrar Imóvel</Link>
+          <Link to="/imoveis/listar">Listar Imóveis</Link>
+          <Link to="#">Listar Condomínio</Link>
+          <Link to="/imoveis/cadastrar">Cadastrar Imóvel</Link>
+          <Link to="/condominio/registrar">Cadastrar Condomínio</Link>
         </div>
 
         <Logout>
@@ -31,28 +33,33 @@ export function EmployeeHome() {
         />
 
         <div>
-          <span>Bem-Vindo</span>
+          <span><strong>ID : </strong> 123 </span>
           <strong>Diogo Brasil</strong>
         </div>
       </Avatar>
 
-      <Label><h2>Informações</h2></Label>
+      <Label><h2>Informações Pessoais</h2></Label>
 
       <Content id="content">
 
-        <dl>
+      <dl>
           <dt>Nome Completo</dt>
           <dd>Diogo Brasil Da Silva</dd>
+
+          <dt>Nº CPF</dt>
+          <dd>02203304405</dd>
+
           <dt>Cargo</dt>
           <dd>Serviços Gerais</dd>
-          <dt>Contrato</dt>
-          <dd>Temporário</dd>
-          <dt>Data de Início de Contrato</dt>
-          <dd>01/01/2024</dd>
-          <dt>Data do Final de Contrato</dt>
-          <dd>01/01/2030</dd>
-          <dt>Tempo de Contrato</dt>
-          <dd>5 Anos</dd>
+
+          <dt>Carga Horária</dt>
+          <dd>20hs</dd>
+
+          <dt>Estado Civil</dt>
+          <dd>Solteiro</dd>
+          
+          <dt>Renda</dt>
+          <dd>R$ 2500.00</dd>
         </dl>
 
       </Content>

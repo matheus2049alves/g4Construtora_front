@@ -1,7 +1,7 @@
 import { FiPlus} from 'react-icons/fi';
 import { RiShutDownLine } from "react-icons/ri";
 
-import { Container, Header, Logout, Brand, Menu, Avatar, Label, Content, Create } from './styles';
+import { Container, Header, Logout, Brand, Menu, Avatar, Label, Content, Create, Cond } from './styles';
 
 import { ButtonText } from '../../components/ButtonText';
 
@@ -26,11 +26,11 @@ export function BrokerHome() {
       <Menu>
 
         <li>
-          <ButtonText title="Imóveis" to="/properties" />
+          <ButtonText title="Imóveis" to="/imoveis/listar" />
         </li>
 
         <li>
-          <ButtonText title="Vendas" to="/sales" />
+          <ButtonText title="Vendas" to="/vendas" />
         </li>
 
       </Menu>
@@ -38,39 +38,48 @@ export function BrokerHome() {
       <Avatar>
 
         <img
-          src="http://github.com/diogobrasil.png"
+          src="http://github.com/matheus2049alves.png"
           alt="Foto do Usuário"
         />
 
         <div>
-          <span>Bem-Vindo</span>
-          <strong>Diogo Brasil</strong>
+          <span><strong>ID : </strong> 123 </span>
+          <strong>Matheus</strong>
         </div>
       </Avatar>
 
-      <Label><h2>Informações</h2></Label>
+      <Label><h2>Informações Pessoais</h2></Label>
 
       <Content id="content">
 
         <dl>
           <dt>Nome Completo</dt>
-          <dd>Diogo Brasil Da Silva</dd>
+          <dd>Matheus Costa Alves</dd>
+
+          <dt>Nº CPF</dt>
+          <dd>02203304405</dd>
+
           <dt>Cargo</dt>
           <dd>Corretor</dd>
-          <dt>Contrato</dt>
-          <dd>Temporário</dd>
-          <dt>Data de Início de Contrato</dt>
-          <dd>01/01/2024</dd>
-          <dt>Data do Final de Contrato</dt>
-          <dd>01/01/2025</dd>
-          <dt>Tempo de Contrato</dt>
-          <dd>1 Ano</dd>
+
+          <dt>Carga Horária</dt>
+          <dd>20hs</dd>
+
+          <dt>Estado Civil</dt>
+          <dd>Solteiro</dd>
+          
+          <dt>Renda</dt>
+          <dd>R$ 2500.00</dd>
         </dl>
 
       </Content>
 
+      <Cond to="/condominio/registrar">
+        <FiPlus />
+        Cadastrar Condomínio
+      </Cond>
 
-      <Create>
+      <Create to="/imoveis/cadastrar">
         <FiPlus />
         Cadastrar Imóvel
       </Create>

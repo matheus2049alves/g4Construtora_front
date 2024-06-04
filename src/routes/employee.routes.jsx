@@ -8,18 +8,20 @@ import { Employees } from "../pages/Employees";
 import { CreateEmployee } from "../pages/CreateEmployee";
 import { Sales } from "../pages/Sales";
 import { CondominiumRegistration } from "../pages/Condominium_registration";
+import { CreateProperty } from "../pages/CreateProperty";
 export function EmployeeRoutes(){
   return(
     <Routes>
       <Route path="/" element = {<EmployeeHome/>}/>
-      <Route path="/broker" element = {<BrokerHome/>}/>
-      <Route path="/manager" element= {<ManagerHome/>}/>
-      <Route path="/details" element= {<DetailsProperty/>}/>
-      <Route path="/properties" element = {<Properties/>}/>
-      <Route path="/sales" element = {<Sales/>}/>
-      <Route path="/employees" element = {<Employees/>}/>
-      <Route path="/create/employee" element = {<CreateEmployee/>}/>
+      <Route path="/corretor" element = {<BrokerHome/>}/>
+      <Route path="/adm" element= {<ManagerHome/>}/>
+      <Route path="/imoveis/detalhes" element= {<DetailsProperty/>}/>
+      <Route path="/imoveis/listar" element = {<Properties/>}/>
+      <Route path="/vendas" element = {<Sales/>}/>
+      <Route path="/funcionario/listar" element = {<Employees/>}/>
+      <Route path="/funciorio/cadastrar" element = {<CreateEmployee/>}/>
       <Route path ="/condominio/registrar" element = {<CondominiumRegistration/>}/>
+      <Route path ="/imoveis/cadastrar" element = { <CreateProperty/> }/>
     </Routes>
   )
 }

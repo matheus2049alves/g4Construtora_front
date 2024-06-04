@@ -34,25 +34,12 @@ export const Container = styled.button`
       color: ${({ theme }) => theme.TITLE_100};
     }
   
-    p {
+    h4 {
       width: 40%;
       margin-top: 1.2rem;
   
       text-align: left;
       font-size: 1.6rem;
-      color: ${({ theme }) => theme.COLORS.TEXT};
-    }
-  }
-
-  .endereco {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 1.2rem;
-
-    p {
-      text-align: left;
-      font-size: 1.4rem;
       color: ${({ theme }) => theme.COLORS.TITLE_100};
     }
   }

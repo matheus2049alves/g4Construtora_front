@@ -7,14 +7,15 @@ export const Container = styled.div`
 
   display: grid;
   grid-template-columns: 25rem auto;
-  grid-template-rows: 6.5rem 15.8rem 10.8rem auto 6.4rem 6.4rem;
+  grid-template-rows: 6.5rem 15.8rem 10.8rem auto 6.4rem 6.4rem 6.4rem;
   grid-template-areas:
   "brand header"
   "menu search"
   "menu label"
   "menu content"
-  "create content"
+  "cond content"
   "createEmployee content"
+  "create content"
   ;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_100};
@@ -146,6 +147,25 @@ export const Create = styled(Link)`
   }
 
 `;
+
+export const Cond = styled(Link)`
+  grid-area: cond;
+
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200 };
+  color: ${({ theme }) => theme.COLORS.TITLE_100};
+  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
+  border-radius:0 0.5rem 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    margin-right: 0.8rem;
+  }
+
+`;
+
 
 export const CreateEmployee = styled(Link)`
   grid-area: createEmployee;

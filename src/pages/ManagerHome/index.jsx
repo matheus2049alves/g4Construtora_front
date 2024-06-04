@@ -1,7 +1,7 @@
 import { FiPlus } from 'react-icons/fi';
 import { RiShutDownLine } from "react-icons/ri";
 
-import { Container, Header, Logout, Brand, Menu, Label, Avatar, Content, Create, CreateEmployee } from './styles';
+import { Container, Header, Logout, Brand, Menu, Label, Avatar, Content, Create, CreateEmployee, Cond } from './styles';
 
 import { ButtonText } from '../../components/ButtonText';
 
@@ -26,15 +26,19 @@ export function ManagerHome() {
       <Menu>
 
         <li>
-          <ButtonText title="Imóveis" to="/properties" />
+          <ButtonText title="Imóveis" to="/imoveis/listar" />
         </li>
 
         <li>
-          <ButtonText title="Vendas" to="/sales" />
+          <ButtonText title="Vendas" to="/vendas" />
         </li>
 
         <li>
-          <ButtonText title="Funcionários" to="/employees" />
+          <ButtonText title="Funcionários" to="/funcionario/listar" />
+        </li>
+
+        <li>
+          <ButtonText title="Relatório de Vendas" to="#" />
         </li>
 
       </Menu>
@@ -42,47 +46,57 @@ export function ManagerHome() {
       <Avatar>
 
         <img
-          src="http://github.com/diogobrasil.png"
+          src="https://i.pinimg.com/originals/9e/33/ba/9e33ba72072e0f010eeccfe5df621500.jpg"
           alt="Foto do Usuário"
         />
 
         <div>
-          <span>Bem-Vindo</span>
-          <strong>Diogo Brasil</strong>
+          <span><strong>ID : </strong> 123 </span>
+          <strong>Beckham</strong>
         </div>
       </Avatar>
 
-      <Label><h2>Informações</h2></Label>
+      <Label><h2>Informações Pessoais</h2></Label>
 
       <Content id="content">
 
-        <dl>
+      <dl>
           <dt>Nome Completo</dt>
-          <dd>Diogo Brasil Da Silva</dd>
+          <dd>Guilherme Beckham</dd>
+
+          <dt>Nº CPF</dt>
+          <dd>02203304405</dd>
+
           <dt>Cargo</dt>
           <dd>Gerente</dd>
-          <dt>Contrato</dt>
-          <dd>Temporário</dd>
-          <dt>Data de Início de Contrato</dt>
-          <dd>01/01/2024</dd>
-          <dt>Data do Final de Contrato</dt>
-          <dd>01/01/2030</dd>
-          <dt>Tempo de Contrato</dt>
-          <dd>5 Anos</dd>
+
+          <dt>Carga Horária</dt>
+          <dd>20hs</dd>
+
+          <dt>Estado Civil</dt>
+          <dd>Solteiro</dd>
+          
+          <dt>Renda</dt>
+          <dd>R$ 2500.00</dd>
         </dl>
 
       </Content>
 
 
-      <Create to="#">
+      <Create to="/imoveis/cadastrar">
         <FiPlus />
         Cadastrar Imóvel
       </Create>
 
-      <CreateEmployee to="#">
+      <CreateEmployee to="/funciorio/cadastrar">
         <FiPlus />
         Cadastrar Funcionário
       </CreateEmployee>
+
+      <Cond to="/condominio/registrar">
+        <FiPlus />
+        Cadastrar Condomínio
+      </Cond>
 
     </Container>
   )

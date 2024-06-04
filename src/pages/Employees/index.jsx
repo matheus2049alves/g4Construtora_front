@@ -38,14 +38,8 @@ export function Employees () {
           {
             nome : "Diogo Brasil Da Silva",
             id: '12345',
-            descricao: 'Lider. Ajuda os seus companheiros.',
-            tempocontrato : '5 anos',
-            endereco: {
-              cep: '65370-000',
-              rua: 'Rua Das Flores',
-              bairro: 'Povoado Bambu',
-              cidade: 'Pindaré Mirim'
-            },
+            cargaHoraria: "20hs",
+            tempocontrato : "5 anos",
             cargo: "CORRETOR"
 
           }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -6,12 +7,13 @@ export const Container = styled.div`
 
   display: grid;
   grid-template-columns: 25rem auto;
-  grid-template-rows: 6.5rem 15.8rem 10.8rem auto 6.4rem;
+  grid-template-rows: 6.5rem 15.8rem 10.8rem auto 6.4rem 6.4rem;
   grid-template-areas:
   "brand header"
-  "menu search"
+  "menu avatar"
   "menu label"
   "menu content"
+  "cond content"
   "create content"
   ;
 
@@ -128,11 +130,11 @@ export const Content = styled.div`
 
 `;
 
-export const Create = styled.button`
-  grid-area: create;
+export const Cond = styled(Link)`
+  grid-area: cond;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200 };
-  color: ${({ theme }) => theme.COLORS.TITLE};
+  color: ${({ theme }) => theme.COLORS.TITLE_100};
   border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
   border-radius:0 0.5rem 0 0;
 
@@ -145,8 +147,26 @@ export const Create = styled.button`
   }
 `;
 
+export const Create = styled(Link)`
+  grid-area: create;
+
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200 };
+  color: ${({ theme }) => theme.COLORS.TITLE_100};
+  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
+  border-radius:0 0.5rem 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    margin-right: 0.8rem;
+  }
+`;
+
+
 export const Avatar = styled.div`
-  grid-area: search;
+  grid-area: avatar;
   display: flex;
   align-items: center;
 
@@ -165,7 +185,7 @@ export const Avatar = styled.div`
     line-height: 2.4rem;
 
     span {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       color: ${({ theme }) => theme.COLORS.TEXT};
     }
 

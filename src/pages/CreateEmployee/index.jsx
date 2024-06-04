@@ -61,7 +61,7 @@ export function CreateEmployee() {
         <Avatar>
 
           <img
-            src="https://github.com/diogobrasil.png"
+            src="https://africancropsciencesociety.org/wp-content/uploads/2020/02/default.jpg"
             alt="Foto do funcionário"
           />
 
