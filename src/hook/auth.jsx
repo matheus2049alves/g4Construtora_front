@@ -26,6 +26,7 @@ function AuthProvider({children}){
   }
   function signOut(){
     localStorage.removeItem("@g4construtora : sucesso")
+    console.log("oi")
     setData({})
   }
   useEffect(() => {

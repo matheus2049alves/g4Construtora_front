@@ -19,7 +19,7 @@ export function EmployeeRoutes(){
       <Route path="/imoveis/listar" element = {<Properties/>}/>
       <Route path="/vendas" element = {<Sales/>}/>
       <Route path="/funcionario/listar" element = {<Employees/>}/>
-      <Route path="/funciorio/cadastrar" element = {<CreateEmployee/>}/>
+      <Route path="/funcionario/cadastrar" element = {<CreateEmployee/>}/>
       <Route path ="/condominio/registrar" element = {<CondominiumRegistration/>}/>
       <Route path ="/imoveis/cadastrar" element = { <CreateProperty/> }/>
     </Routes>

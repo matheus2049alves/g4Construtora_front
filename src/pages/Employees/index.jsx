@@ -27,7 +27,7 @@ export function Employees () {
       </Header>
 
       <Search>
-        <Input placeholder="Pesquisar pelo id" icon={FiSearch} />
+        <Input placeholder="Pesquisar" icon={FiSearch} />
       </Search>
 
       <Label><h2>Funcionários</h2></Label>

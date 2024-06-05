@@ -88,7 +88,7 @@ export function ManagerHome() {
         Cadastrar Imóvel
       </Create>
 
-      <CreateEmployee to="/funciorio/cadastrar">
+      <CreateEmployee to="/funcionario/cadastrar">
         <FiPlus />
         Cadastrar Funcionário
       </CreateEmployee>

@@ -1,6 +1,4 @@
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera, FiDollarSign } from 'react-icons/fi';
-import { IoIosArrowDown } from 'react-icons/io';
-
 import { Section } from '../../components/Section';
 import { Button } from '../../components/Button';
 import { Label } from '../../components/Label';
@@ -11,12 +9,13 @@ import {Container, Form, Avatar, Select} from './styles';
 
 export function Profile () {
   const {user} = useAuth()
+  console.log(user.cpf)
 
   const [cpf, setCpf] = useState("")
-  const [nome, setNome] = useState("")
-  const [numeroDeFilhos, setNumerodeFilhos] = useState(0)
-  const [estado_civil, setEstadoCivil] = useState("")
-  const [renda2, setRenda] = useState(0) 
+  const [nome, setNome] = useState(user.nome)
+  const [numeroDeFilhos, setNumerodeFilhos] = useState(user.numero_de_filhos)
+  const [estado_civil, setEstadoCivil] = useState(user.estado_civil)
+  const [renda2, setRenda] = useState(user.renda) 
   return (
     <Container>
 
@@ -55,55 +54,48 @@ export function Profile () {
         <Label htmlFor={"name"} className="label">Nome</Label>
 
         <Input
-          placeholder={user.nome}
+          placeholder = {user.nome}
           type="text"
           icon={FiUser}
           id="name"
           onChange = {e => setNome(e.target.value)}
         />
-        
-        <Label htmlFor={"email"} className="label">Endereço de e-mail</Label>
-
-        <Input
-          placeholder="E-mail"
-          type="text"
-          icon={FiMail}
-          id="email"
-        />
-
+      
         <Label htmlFor={"cpf"} className="label">Nº do CPF</Label>
 
         <Input
-          placeholder={user.cpf}
+          placeholder = {user.cpf}
           type="text"
           id="cpf"
+          onChange = {e => setCpf(e.target.value)}
         />
 
         <Label htmlFor={"renda"} className="label">Renda Mensal</Label>
 
         <Input
-          placeholder={user.renda}
+          placeholder = {user.renda}
           icon={FiDollarSign}
           type="number"
           id="renda"
+          onChange = {e => setRenda(e.target.value)}
         />
 
         <Label htmlFor={"filhos"} className="label">Nº de Filhos</Label>
 
         <Input
-          placeholder={user.numero_de_filhos}
+          placeholder = {user.numero_de_filhos}
           type="number"
           id="filhos"
+          onChange = {e => setNumerodeFilhos(e.target.value)}
         />
 
         <Label htlmFor={"estadoCivil"} className="label">Estado Civil</Label>
             
-        <Select id="estadoCivil" name="estadoCivil">
+        <Select id="estadoCivil" name="estadoCivil"  onChange = {e => setEstadoCivil(e.target.value)}>
           <option value="solteiro">Solteiro(a)</option>
           <option value="casado">Casado(a)</option>
           <option value="divorciado">Divorciado(a)</option>
           <option value="viuvo">Viúvo(a)</option>
-          <IoIosArrowDown/>
         </Select>
 
         <Section title="Endereço">
@@ -159,8 +151,8 @@ export function Profile () {
           type="password"
           icon={FiLock}
           id="senhaAtual"
-          minlength="6"
-          maxlength="8"
+          minLength="6"
+          maxLength="8"
         />
 
         <Label htmlFor={"senhaNova"} className="label">Nova Senha</Label>
@@ -170,8 +162,8 @@ export function Profile () {
           type="password"
           icon={FiLock}
           id="senhaNova"
-          minlength="6"
-          maxlength="8"
+          minLength="6"
+          maxLength="8"
         />
 
         </Section>

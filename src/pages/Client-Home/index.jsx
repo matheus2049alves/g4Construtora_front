@@ -27,7 +27,6 @@ export function ClientHome() {
     fetchProperties(); 
   }, []); 
 
-  console.log(property)
   return (
     <Container>
       <Header/>

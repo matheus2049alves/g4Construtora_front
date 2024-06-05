@@ -1,8 +1,8 @@
-import { Container, Form,InputContainer,Header, Page} from "./styles";
+import { Container, Form,InputContainer,Header, Page,Select} from "./styles";
 import { Label } from "../../components/Label";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { api } from "../../services/api"; 
 
 export function CreateProperty(){
@@ -40,6 +40,23 @@ export function CreateProperty(){
     })
   }
 
+  const [condominium, setCondominium] = useState([]);
+  useEffect(() => {
+    async function fetchProperties() {
+      try {
+        const response = await api.get("/condominio/listar");
+        setCondominium(response.data.condominios);
+      } catch (error) {
+        if (error){
+          alert(error.response.data.message)
+        }
+        console.error("Erro ao buscar imóveis:", error);
+      }
+    }
+  
+    fetchProperties(); 
+  }, []); 
+  console.log(idCondomio)
   return(
     <Container>
 
@@ -57,15 +74,18 @@ export function CreateProperty(){
           <InputContainer>
             <div className="wrapper">
             
-              <Label htlmFor={"condominio"}>ID do Condominio</Label>
-              <Input 
-                width={"30rem"}
-                placeholder = "Ao qual o imóvel pertence"
-                type = "text"
-                id = "condominio"
-                onChange = {e => setIDCondominio(e.target.value)}
-              />
-            </div>
+              <Label htlmFor={""}>Condomínio</Label>
+
+
+              <Select key = {condominium.id} id="estadoCivil" name="estadoCivil" onChange = {e => setIDCondominio(e.target.value)}>
+                {condominium.map((condominium) => (
+                  <option Value = {condominium.id}>
+                    {condominium.nome}
+                  </option>
+                ))} 
+                </Select>
+            
+              </div>
             <div >
               <Label htlmFor={"tipo_imovel"}>Tipo do Imóvel</Label>
                 <Input 

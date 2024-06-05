@@ -10,7 +10,7 @@ export function Routes(){
   const {user} = useAuth()
   return(
     <BrowserRouter>
-    <EmployeeRoutes/> 
+   {user ? <EmployeeRoutes/> : <AuthRoutes/> }
     </BrowserRouter>
   )
 }

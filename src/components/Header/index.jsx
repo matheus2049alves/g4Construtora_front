@@ -1,6 +1,7 @@
 import { RiShutDownLine } from "react-icons/ri";
 import { Container, Logout } from "./styles";
 import { useAuth } from "../../hook/auth";
+import { Link } from "react-router-dom";
 export function Header () {
   const {signOut} = useAuth()
   return (
@@ -12,9 +13,14 @@ export function Header () {
             <li> <a href="#">Imóveis</a></li>
             <li>
              <a href="#">Area do Cliente</a>
+
              <ul className="DropDown">
               <li><a href="#">Compras</a></li>
-              <li> <a href="/profile"> Meus Dados</a></li>
+              <li>
+                <Link to="/perfil">
+                  Meus Dados
+                </Link>
+              </li>
              </ul>
             </li>
           </ul>

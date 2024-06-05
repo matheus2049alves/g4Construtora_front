@@ -6,8 +6,29 @@ import { Container, Header, Logout, Search, Label, Content } from './styles';
 
 import { Input } from '../../components/Input';
 import { Property } from '../../components/Property';
+import { useState,useEffect } from 'react';
+import { api } from '../../services/api';
 
 export function Properties() {
+  const [property, setProperty] = useState([]);
+  useEffect(() => {
+    async function fetchProperties() {
+      try {
+        const response = await api.get("/imovel/listar");
+        setProperty(response.data.imoveis);
+      } catch (error) {
+        if (error){
+          alert(error.response.data.message)
+        }
+        console.error("Erro ao buscar imóveis:", error);
+      }
+    }
+  
+    fetchProperties(); 
+  }, []); 
+  console.log(property)
+
+
 
   return (
     <Container>
@@ -27,29 +48,28 @@ export function Properties() {
       </Header>
 
       <Search>
-        <Input placeholder="Pesquisar pelo id" icon={FiSearch} />
+        <Input placeholder="Pesquisar" icon={FiSearch} />
       </Search>
 
       <Label><h2>Imóveis</h2></Label>
 
       <Content id="content">
 
-        <Property data={
-          {
-            id: '12345',
-            descricao: 'Casa de dois andares, com varanda e vista para o mar. Ótima para criar os filhos, convidar a família e amigos para um churrascos. Vizinhos tranquilos e gentis.',
-            endereco: {
-              cep: '65370-000',
-              rua: 'Rua Das Flores',
-              bairro: 'Povoado Bambu',
-              cidade: 'Pindaré Mirim'
-            },
-            status: "DISPONÍVEL"
+      {property.map((property) => (
+    
+        <Property key= {property.id} data = {{
+                id : `${property.id}`,
+                descricao : `${property.aminidades}`,
+                endereco : {
+                  cep : `${property.cep}`,
+                  rua :`${property.rua}`,
+                  cidade : `${property.cidade}`,
 
-          }
-        }
-        />
-
+                }
+              }
+            }
+          />
+        ))} 
       </Content>
 
     </Container>

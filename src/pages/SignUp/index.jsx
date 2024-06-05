@@ -1,4 +1,4 @@
-import { Container,Form,InputContainer,Select, Header } from "./styles";
+import { Container,Form,InputContainer,Select, Header, Page} from "./styles";
 import { Input } from "../../components/Input";
 import {FiMail,FiLock} from "react-icons/fi"
 import { Button } from "../../components/Button";
@@ -6,6 +6,7 @@ import { Label } from "../../components/Label";
 import { IoIosArrowDown } from "react-icons/io"
 import { useState } from "react";
 import { api } from "../../services/api";
+
 
 export function SignUp(){
   const [cpf, setCpf] = useState("")
@@ -39,12 +40,12 @@ export function SignUp(){
 
   return(
     <Container>
-
+      <Page>
       <Header>
         <h1>G4 Construtora</h1>
         <p>Construa sua vida com a gente</p>
       </Header>
-    <div>
+      
       <Form>
         
         <h2>Crie Sua Conta</h2>
@@ -54,20 +55,12 @@ export function SignUp(){
           
             <Label htlmFor={"name"}>Nome</Label>
             <Input 
-              width={"23.15rem"}
-              placeholder = "seu primeiro nome"
+              width={"62.2rem"}
+              placeholder = "seu nome completo"
               type = "text"
               id = "name"
               onChange = {e => setNome(e.target.value)}
             />
-          </div>
-          <div >
-            <Label htlmFor={"last_name"}>Sobrenome</Label>
-              <Input 
-                width={"23.15rem"}
-                placeholder = "Sobrenome"
-                type = "text"
-                />
           </div>
         </InputContainer>
 
@@ -76,7 +69,7 @@ export function SignUp(){
           <div>
             <Label htlmFor={"CPF"}>CPF</Label>
             <Input 
-              width={"23.15rem"}
+              width={"30rem"}
               placeholder = "000.000.000-00"
               type = "text"
               id = "CPF"
@@ -87,7 +80,7 @@ export function SignUp(){
           <div>
             <Label htlmFor={""}>N° de Filhos</Label>
             <Input 
-              width={"23.15rem"}
+              width={"30rem"}
               placeholder = "Quantos filhos você tem?"
               type = "number"
               onChange = {e => setNumerodeFilhos(e.target.value)}
@@ -111,8 +104,8 @@ export function SignUp(){
           <div>
             <Label htlmFor={""}>Renda</Label>
             <Input 
-              width={"23.15rem"}
-                placeholder = "Renda"
+              width={"30rem"}
+                placeholder = "1000"
                 type = "number"
                 onChange = {e => setRenda(e.target.value)}
             />
@@ -131,8 +124,8 @@ export function SignUp(){
           <div>
             <Label htlmFor={""}>Senha</Label>
               <Input
-                width={"47.8rem"}
-                placeholder = "Senha"
+                width={"62.2rem"}
+                placeholder = "Senha forte"
                 type = "password"
                 icon={FiLock}    
             />
@@ -143,7 +136,7 @@ export function SignUp(){
         <Button title={"Cadastrar"} onClick = {handleSignUp}/>
         
         </Form>
-      </div>
+        </Page>
     </Container>
   )
 

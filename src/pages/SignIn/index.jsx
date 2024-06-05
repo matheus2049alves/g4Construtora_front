@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { Label } from '../../components/Label';
+import { Link } from "react-router-dom";
 
 export function SignIn () {
   const [cpf, setCpf] = useState("")
@@ -45,13 +46,16 @@ export function SignIn () {
           type="password"
           icon={FiLock}
           onChange = {e => setPassword(e.target.value)}
+          minlength="4"
         />
 
         <Button title="Entrar" onClick = {handleSignIn}/>
 
-        <a href="/">
-          Criar Conta
-        </a>
+
+        <Link to="/cadastrar">
+          Criar Contar
+        </Link>
+
 
       </Form>
 

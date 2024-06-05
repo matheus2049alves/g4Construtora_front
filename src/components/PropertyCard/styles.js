@@ -27,6 +27,7 @@ export const AboutProperty = styled.div`
   width: 100%;
   padding: 3.5rem 2rem 2rem;
   color: ${({theme})=>theme.COLORS.BACKGROUND_900};
+  position: relative;
 
   > h1 {
     font-size: 2.6rem;
@@ -47,8 +48,11 @@ export const AboutProperty = styled.div`
   > span {
     font-size: 2rem; 
     font-weight: 700;   
-    margin-top: 0.5rem; 
-    display: block;     
+    margin-top: 1.5rem; 
+    display: block; 
+    position:absolute ;
+    bottom: 2.5rem;
+    right: 15.2rem;
   }
 
 

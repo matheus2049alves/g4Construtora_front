@@ -7,7 +7,7 @@ export function PropertyCard({to,img,price,title,description}){
      <AboutProperty>
         <h1>{title}</h1>
         <p>{description}</p>
-        <span>{price}</span>
+        <span>{price} R$</span>
       
      </AboutProperty>
     </Container>

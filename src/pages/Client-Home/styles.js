@@ -21,7 +21,7 @@ export const Filter = styled.div`
 
 export const Slider = styled.div`
   grid-area: content;
-  width: 105.2rem;
+  width: 110rem;
   margin:0 auto ;
   padding: 5rem 0;
 

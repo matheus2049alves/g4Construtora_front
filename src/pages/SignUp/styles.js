@@ -2,37 +2,33 @@ import styled from "styled-components";
 import Background from "../../assets/background.jpeg"
 
 export const Container = styled.div`
+  &::before {
+    content: "";
+    background: ${({ theme }) => theme.COLORS.GRAY_300};;
+    display: block;
     width: 100%;
-    height: 100vh;
-    
-
-    >div {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-    }
-   
-
+    height: 43.6rem;
+    position: absolute;
+    z-index: -1;
+  }
 `
 
 export const Form = styled.form`
-  width: 75rem;
-  margin-top: 2.5rem;
-  padding: 0 13.6rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
+  gap: 3.2rem;
+  min-height: 40rem;
+  border-radius: 20px 20px 20px 20px;
+  background: #FFF;
+  padding: 1rem 6.4rem 6.4rem; 
+  background-color: ${({theme}) => theme.COLORS.BACKGROUND_300};
   
 
   >h2 {
     font-size: 24px;
-    margin: 48px 0;
-    margin-bottom: 24px;
+    margin-top: 24px;
     color: ${({theme}) => theme.COLORS.TITLE_200};
+    align-self: center;
   }
 
   >a {
@@ -56,7 +52,7 @@ export const BackgroundImg = styled.div`
 `
 
 export const Select = styled.select`
-  width: 23.15rem;
+  width: 30rem;
   height: 5.6rem;
   padding: 1.6rem;
   border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
@@ -69,6 +65,12 @@ export const Select = styled.select`
 
 `;
 
+export const Page = styled.div`
+  width: 75rem;
+  margin: 0 auto 15rem;
+  padding-top: 15rem;
+`
+
 
 export const Header = styled.header`
   width: 100%;
@@ -80,12 +82,12 @@ export const Header = styled.header`
   
   >h1 {
     font-size: 3.5rem;
-    color: ${({theme}) => theme.COLORS.ORANGE};
+    color: ${({theme}) => theme.COLORS.WHITE};
   }
 
   >p {
     font-size: 1.4rem;
-    color: ${({theme}) => theme.COLORS.BACKGROUND_200}
+    color: ${({theme}) => theme.COLORS.TITLE_WHITE}
   }
 `
 
