@@ -4,6 +4,7 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { useState, useEffect } from "react";
 import { api } from "../../services/api"; 
+import { FiFile } from 'react-icons/fi';
 
 export function CreateProperty(){
 
@@ -148,8 +149,18 @@ export function CreateProperty(){
             <option value="Necessita de reparos">Necessita de reparos</option>
             <option value="Restaurado">Restaurado</option>
           </SelectEstado>
-
           </div>
+          <InputContainer>
+            <div className= "chooseFiles">
+              <Label htlmFor={"images"}>Imagens</Label>
+              <Input 
+                width={"62.2rem"}
+                type="file"
+                multiple
+                icon={FiFile}
+              />
+            </div>
+          </InputContainer>
 
           <Button title={"Cadastrar"} onClick = {handleSignUp}/>
 

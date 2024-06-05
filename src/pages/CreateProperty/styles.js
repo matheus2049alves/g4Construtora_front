@@ -58,6 +58,11 @@ export const InputContainer = styled.div`
   gap: 2.2rem;
   margin-bottom: 1.5rem;
 
+  .chooseFiles input[type="file"] {
+    opacity: 0;
+  
+}
+
 `
 
 export const Header = styled.header`
