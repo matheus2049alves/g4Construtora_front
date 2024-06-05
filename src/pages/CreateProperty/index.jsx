@@ -1,4 +1,4 @@
-import { Container, Form,InputContainer,Header, Page,Select} from "./styles";
+import { Container, Form,InputContainer,Header, Page,Select, SelectEstado} from "./styles";
 import { Label } from "../../components/Label";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -142,15 +142,13 @@ export function CreateProperty(){
             </div>
           </InputContainer>
           <div>
-          <Label htlmFor={"status"}>Status</Label>
-              <Input 
-                width={"62.2rem"}
-                placeholder = "Novo"
-                type = "status"
-                id = "tax"
-                onChange = {e => setStatus(e.target.value)}
-          
-          />
+          <Label htlmFor={"status"}>Estado</Label>
+            <SelectEstado id="estadoCivil" name="estadoCivil" onChange = {e => setStatus(e.target.value)}>
+            <option value="Novo">Novo</option>
+            <option value="Necessita de reparos">Necessita de reparos</option>
+            <option value="Restaurado">Restaurado</option>
+          </SelectEstado>
+
           </div>
 
           <Button title={"Cadastrar"} onClick = {handleSignUp}/>
