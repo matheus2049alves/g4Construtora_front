@@ -74,7 +74,7 @@ export function BrokerHome() {
 
       </Content>
 
-      <Cond to="/condominio/registrar">
+      <Cond to="/condominio/cadastrar">
         <FiPlus />
         Cadastrar Condomínio
       </Cond>

@@ -93,7 +93,7 @@ export function ManagerHome() {
         Cadastrar Funcionário
       </CreateEmployee>
 
-      <Cond to="/condominio/registrar">
+      <Cond to="/condominio/cadastrar">
         <FiPlus />
         Cadastrar Condomínio
       </Cond>

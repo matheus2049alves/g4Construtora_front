@@ -16,7 +16,7 @@ export function EmployeeHome() {
           <Link to="/imoveis/listar">Listar Imóveis</Link>
           <Link to="#">Listar Condomínio</Link>
           <Link to="/imoveis/cadastrar">Cadastrar Imóvel</Link>
-          <Link to="/condominio/registrar">Cadastrar Condomínio</Link>
+          <Link to="/condominio/cadastrar">Cadastrar Condomínio</Link>
         </div>
 
         <Logout>
