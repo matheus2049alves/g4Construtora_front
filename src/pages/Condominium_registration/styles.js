@@ -100,3 +100,17 @@ export const Header = styled.header`
   margin-bottom: 5.8rem;
   }
 `
+
+export const Select = styled.select`
+  width: 62.2rem;
+  height: 5.6rem;
+  padding: 1.6rem;
+  border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
+  color: ${({ theme }) => theme.COLORS.TITLE_100};
+  border: none;
+  border-radius: 1rem;
+  margin-bottom: .8rem;
+  background-image: url();
+
+`;

@@ -1,4 +1,4 @@
-import { Container, Form,InputContainer,Header, Page} from "./styles";
+import { Container, Form,InputContainer,Header, Page,Select} from "./styles";
 import { Label } from "../../components/Label";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -94,16 +94,14 @@ export function CondominiumRegistration(){
                   />
             </div>
           </InputContainer>
+    
           <div>
-          <Label htlmFor={"status"}>Status</Label>
-              <Input 
-                width={"62.2rem"}
-                placeholder = "Novo"
-                type = "status"
-                id = "tax"
-                onChange = {e => setStatus(e.target.value)}
-          
-          />
+            <Label htlmFor={""}>Status</Label>
+            <Select id="status" name="status" onChange = {e => setStatus(e.target.value)}>
+              <option value="Em construção">Em contrução</option>
+              <option value="Concluido">Concluido</option>
+              <option value="Em renovação">Em renovação</option>
+            </Select>
           </div>
 
           <div className="amenidades">
@@ -155,15 +153,17 @@ export function CondominiumRegistration(){
                   />
             </div>
           </InputContainer>
-          <Label htlmFor={"status"}>CEP</Label>
-              <Input 
-                width={"62.2rem"}
-                placeholder = "65213-000"
-                type = "text"
-                id = "CEP"
-                onChange = {e => setCep(e.target.value)}
-          
-          />
+          <div>
+            <Label htlmFor={"status"}>CEP</Label>
+                <Input 
+                  width={"62.2rem"}
+                  placeholder = "65213-000"
+                  type = "text"
+                  id = "CEP"
+                  onChange = {e => setCep(e.target.value)}
+            
+            />
+          </div>
           <Button title={"Cadastrar"} onClick = {handleSignUp}/>
         </Form>
       </Page>
