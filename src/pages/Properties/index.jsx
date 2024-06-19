@@ -11,6 +11,7 @@ import { api } from '../../services/api';
 
 export function Properties() {
   const [property, setProperty] = useState([]);
+  console.log(property)
   useEffect(() => {
     async function fetchProperties() {
       try {
@@ -58,12 +59,13 @@ export function Properties() {
       {property.map((property) => (
     
         <Property key= {property.id} data = {{
-                id : `${property.id}`,
+                nome : `${property.nome}`,
                 descricao : `${property.aminidades}`,
                 endereco : {
                   cep : `${property.cep}`,
                   rua :`${property.rua}`,
                   cidade : `${property.cidade}`,
+                  estado : `${property.estado}`
 
                 }
               }

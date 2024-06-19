@@ -6,12 +6,14 @@ const AuthContext = createContext({})
 
 function AuthProvider({children}){
    const [data,setData] = useState("")
+   
   async function signIn({cpf,password}){
     try {
       const response = await api.post("/Login", {cpf, password})
         const {sucesso} = response.data
         setData({sucesso})
-        console.log(sucesso)
+        const {funcao} = response.data.sucesso
+        console.log(funcao)
         localStorage.setItem("@g4construtora : sucesso", JSON.stringify(sucesso))
       
     } catch (error) {
@@ -39,7 +41,7 @@ function AuthProvider({children}){
   },[])
 
   return(
-    <AuthContext.Provider value ={{signIn,user : data.sucesso,signOut}}>
+    <AuthContext.Provider value ={{signIn,user : data.sucesso,signOut,}}>
       {children}
     </AuthContext.Provider>
   )

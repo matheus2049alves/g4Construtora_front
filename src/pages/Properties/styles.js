@@ -83,6 +83,9 @@ export const Label = styled.section`
 `;
 
 export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   grid-area: content;
   padding: 0 6.4rem;
   overflow-y: auto;

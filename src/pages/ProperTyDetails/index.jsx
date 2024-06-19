@@ -4,6 +4,7 @@ import {Header} from "../../components/Header"
 import { useParams } from "react-router-dom";
 import { useEffect , useState} from "react";
 import { api } from "../../services/api";
+import { MdBathroom } from "react-icons/md";
 
 export function PropertyDetails(){
   const {id} = useParams()
@@ -62,7 +63,7 @@ export function PropertyDetails(){
             <dd>{property.imovel_estado}</dd>
             <dt>Número de quartos</dt>
             <dd>{property.num_quartos}</dd>
-            <dt>Número de banheiros</dt>
+            <dt>Número de banheiros {<MdBathroom/>}</dt>
             <dd>{property.num_banheiros}</dd>
           </dl>
 

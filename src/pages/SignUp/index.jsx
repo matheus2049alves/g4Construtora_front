@@ -27,8 +27,9 @@ export function SignUp(){
     console.log(typeof renda )
 
     api.post("/cliente/cadastrar", {cpf, nome,numero_de_filhos,estado_civil,renda})
-    .then(() => {
+    .then((data) => {
       alert("Usuário cadastrado")
+      console.log(data)
     }).catch(error => {
       if (error.response){
         alert(error.response.data.message)

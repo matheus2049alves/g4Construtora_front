@@ -11,7 +11,7 @@ export const Container = styled(Link)`
   background-color: ${({theme}) => theme.COLORS.WHITE};
   box-shadow: 0px 2px 4px ${({ theme }) => theme.COLORS.BACKGROUND_100}
 
-  `
+`
 
 export const Image = styled.img`
   grid-area: image;

@@ -53,7 +53,7 @@ export function SignIn () {
 
 
         <Link to="/cadastrar">
-          Criar Contar
+          Criar Conta
         </Link>
 
 

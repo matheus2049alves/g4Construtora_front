@@ -8,9 +8,11 @@ import { useAuth } from "../hook/auth";
 
 export function Routes(){
   const {user} = useAuth()
+
+ 
   return(
     <BrowserRouter>
-   {user ? <EmployeeRoutes/> : <AuthRoutes/> }
+      {user? <EmployeeRoutes/> : <AuthRoutes/> }
     </BrowserRouter>
   )
 }
