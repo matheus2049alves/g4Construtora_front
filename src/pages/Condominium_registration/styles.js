@@ -102,7 +102,7 @@ export const Header = styled.header`
 `
 
 export const Select = styled.select`
-  width: 62.2rem;
+  width: 30rem;
   height: 5.6rem;
   padding: 1.6rem;
   border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};

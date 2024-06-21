@@ -4,9 +4,12 @@ import { RiShutDownLine } from "react-icons/ri";
 import { Container, Header, Logout, Brand, Menu, Label, Avatar, Content, Create, CreateEmployee, Cond } from './styles';
 
 import { ButtonText } from '../../components/ButtonText';
+import { useAuth } from '../../hook/auth';
+
+
 
 export function ManagerHome() {
-
+  const {signOut} = useAuth()
   return (
     <Container>
       <Brand>
@@ -17,7 +20,7 @@ export function ManagerHome() {
 
       <Header>
 
-        <Logout>
+        <Logout onClick={signOut}>
           <RiShutDownLine />
         </Logout>
 

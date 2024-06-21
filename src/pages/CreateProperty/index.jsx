@@ -89,12 +89,14 @@ export function CreateProperty(){
               </div>
             <div >
               <Label htlmFor={"tipo_imovel"}>Tipo do Imóvel</Label>
-                <Input 
-                  width={"30rem"}
-                  placeholder = "Qual tipo de imóvel?"
-                  type = "text"
-                  onChange = {e => setTipoImovel(e.target.value)}
-                  />
+                <Select onChange = {e => setTipoImovel(e.target.value)}>
+                  <option value="Sobrado">Sobrado</option>
+                  <option value="Apartamento">Apartamento</option>
+                  <option value="Bangalô">Bangalô</option>
+                  <option value="Apartamento">Apartamento</option>
+                  <option value="Casa Geminada">Casa Geminada</option>
+
+                </Select>
             </div>
           </InputContainer>
           <InputContainer>
@@ -143,7 +145,7 @@ export function CreateProperty(){
             </div>
           </InputContainer>
           <div>
-          <Label htlmFor={"status"}>Estado</Label>
+          <Label htlmFor={"status"}>Estado do Imóvel</Label>
             <SelectEstado id="estadoCivil" name="estadoCivil" onChange = {e => setStatus(e.target.value)}>
             <option value="Novo">Novo</option>
             <option value="Necessita de reparos">Necessita de reparos</option>

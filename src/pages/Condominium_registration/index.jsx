@@ -2,8 +2,9 @@ import { Container, Form,InputContainer,Header, Page,Select} from "./styles";
 import { Label } from "../../components/Label";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { api } from "../../services/api"; 
+import axios from "axios";
 
 export function CondominiumRegistration(){
   const [nome,setNome] = useState("")
@@ -40,6 +41,43 @@ export function CondominiumRegistration(){
     })
   }
 
+  const [ufs, setUfs] = useState([])
+  const [id, setId] = useState(11)
+  const [cities, setCities] = useState([])
+  const [acronym, setAcronym] = useState("RO")
+  const [dataCep, setDataCep] = useState([])
+  useEffect(() => {
+    axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
+    .then(response => {
+      setUfs(response.data)
+      console.log(ufs)
+    })
+  },[])
+
+
+
+ 
+  useEffect(() => {
+    const uf = ufs.find(uf => uf.nome === estado);
+    if (uf) {
+      setId(uf.id);
+      
+    }
+  }, [estado, ufs]);
+
+  useEffect(() => {
+     
+      const fetchCities = async () => {
+        const response = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${id}/municipios`);
+        setCities(response.data);
+    
+      };
+      fetchCities();
+    
+  }, [id]);
+
+
+  
   return(
     <Container>
       <Page>
@@ -89,7 +127,7 @@ export function CondominiumRegistration(){
               <Label htlmFor={"last_name"}>Ano de Construção</Label>
                 <Input 
                   width={"30rem"}
-                  type = "number"
+                  type = "date"
                   onChange = {e => setAnoConstrução(e.target.value)}
                   />
             </div>
@@ -113,22 +151,20 @@ export function CondominiumRegistration(){
             <div className="wrapper">
             
               <Label htlmFor={"rua"}>Estado</Label>
-              <Input 
-                width={"30rem"}
-                placeholder = "Maranhão"
-                type = "text"
-                id = "name"
-                onChange = {e => setEstado(e.target.value)}
-              />
+              <Select onChange={e => setEstado(e.target.value) }>
+                {ufs.map((uf) => 
+                  <option key={uf.id} value={uf.nome}>{uf.nome}</option>
+
+                  
+                )}
+              </Select>
             </div>
             <div >
               <Label htlmFor={"City"}>Cidade</Label>
-                <Input 
-                  width={"30rem"}
-                  placeholder = "São Luis"
-                  type = "text"
-                  onChange = {e => setCidade(e.target.value)}
-                  />
+                <Select onChange={e => setCidade(e.target.value)}> 
+                  {cities.map((city) => 
+                  <option key = {city.id} value={city.nome}>{city.nome}</option>)}
+                </Select>
             </div>
           </InputContainer>
           <InputContainer>
